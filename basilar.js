@@ -185,6 +185,7 @@ function run(wipe) {
 
     // Create the dist folder.
     fs.mkdirSync(configuration.destination);
+    fs.mkdirSync(path.join(configuration.destination, '.well-known'));
   } else {
     fs.unlinkSync(path.join(configuration.destination, 'style.css'));
     fs.unlinkSync(path.join(configuration.destination, 'web.js'));
