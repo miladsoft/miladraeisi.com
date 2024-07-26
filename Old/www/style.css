@@ -555,6 +555,9 @@
     padding: 2em;
   }
   
+  .text-justify{
+    
+  }
   @page {
     size: A4;
     margin: 0;
@@ -585,3 +588,4 @@
       margin-top: 2em;
     }
   }
+

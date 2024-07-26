@@ -1,3 +1,1 @@
-# MiladRaeisi.com
-
-Source for my personal web site.
+Welcome to Milad Raeisi’s official website! This platform is dedicated to introducing Milad Raeisi and sharing insightful articles on programming, blockchain, and the latest technologies. Built with Astro, this site is modern, minimalistic, and highly performant.

@@ -1,6 +1,6 @@
 # Milad Raeisi
 
-<h2 class="highlight">
+<h2 class="highlight text-justify">
 I'm Milad Raeisi, a seasoned programmer, developer, and software architect. My expertise spans software development, UI/UX design, data science, AI, and blockchain technologies. As a dedicated member of Blockcore, I focus on creating cutting-edge tools for blockchain and Bitcoin, with a mission to drive decentralization across all domains.
 </h2>
 
