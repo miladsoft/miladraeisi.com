@@ -106,22 +106,10 @@ You can specify and enable certain social links in hero section and footer. To d
 export const SOCIALS: SocialObjects = [
   {
     name: "Github",
-    href: "https://github.com/satnaing/astro-paper",
+    href: "https://github.com/miladsoft",
     linkTitle: ` ${SITE.title} on Github`,
     active: true,
-  },
-  {
-    name: "Facebook",
-    href: "https://github.com/satnaing/astro-paper",
-    linkTitle: `${SITE.title} on Facebook`,
-    active: true,
-  },
-  {
-    name: "Instagram",
-    href: "https://github.com/satnaing/astro-paper",
-    linkTitle: `${SITE.title} on Instagram`,
-    active: true,
-  },
+  }
   ...
 ]
 ```
@@ -134,7 +122,7 @@ For instance, if I want to make my Github appear, I'll make it like this.
 export const SOCIALS: SocialObjects = [
   {
     name: "Github",
-    href: "https://github.com/satnaing", // update account link
+    href: "https://github.com/miladsoft", // update account link
     linkTitle: `${SITE.title} on Github`, // this text will appear on hover and VoiceOver
     active: true, // makre sure to set active to true
   }

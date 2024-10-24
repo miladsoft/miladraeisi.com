@@ -4,7 +4,7 @@ pubDatetime: 2023-09-25T10:25:54.547Z
 title: AstroPaper 3.0
 slug: astro-paper-v3
 featured: false
-ogImage: https://github.com/satnaing/astro-paper/assets/53733092/1ef0cf03-8137-4d67-ac81-84a032119e3a
+ogImage: https://github.com/miladsoft/assets/53733092/1ef0cf03-8137-4d67-ac81-84a032119e3a
 tags:
   - release
 description: "AstroPaper Version 3: Elevating Your Web Experience with Astro v3 and Seamless View Transitions"
@@ -21,7 +21,7 @@ We're excited to announce the release of AstroPaper v3, packed with new features
 ### Astro v3 Integration
 
 <video autoplay loop="loop" muted="muted" plays-inline="true">
-  <source src="https://github.com/satnaing/astro-paper/assets/53733092/18fdb604-1ca3-41a0-8372-1367759091ff" type="video/mp4">
+  <source src="https://github.com/miladsoft/assets/53733092/18fdb604-1ca3-41a0-8372-1367759091ff" type="video/mp4">
   <!-- <source src="/assets/docs/astro-paper-v3-view-transitions-demo.mp4" type="video/mp4"> -->
 </video>
 
@@ -48,13 +48,13 @@ The theme-color meta tag has been added to dynamically adapt to theme switches, 
 **_AstroPaper v2 theme switch_**
 
 <video autoplay loop="loop" muted="muted" plays-inline="true">
-  <source src="https://github.com/satnaing/astro-paper/assets/53733092/3ab5a1e8-1891-4264-a5bb-0ded69143c1a" type="video/mp4">
+  <source src="https://github.com/miladsoft/assets/53733092/3ab5a1e8-1891-4264-a5bb-0ded69143c1a" type="video/mp4">
 </video>
 
 **_AstroPaper v3 theme switch_**
 
 <video autoplay loop="loop" muted="muted" plays-inline="true">
-  <source src="https://github.com/satnaing/astro-paper/assets/53733092/8ac9deb8-d1f8-4029-86bd-6aa0def380b4" type="video/mp4">
+  <source src="https://github.com/miladsoft/assets/53733092/8ac9deb8-d1f8-4029-86bd-6aa0def380b4" type="video/mp4">
 </video>
 
 ## Other Changes
@@ -166,8 +166,8 @@ Actually, I've already written a blog post for this case and you can check out [
 
 ## Outro
 
-Ready to explore the exciting new features and improvements in AstroPaper v3? Start [using AstroPaper](https://github.com/satnaing/astro-paper) now.
+Ready to explore the exciting new features and improvements in AstroPaper v3? Start [using AstroPaper](https://github.com/miladsoft) now.
 
-For other bug fixes and integration updates, check out the [release notes](https://github.com/satnaing/astro-paper/releases/tag/v3.0.0) to learn more.
+For other bug fixes and integration updates, check out the [release notes](https://github.com/miladsoft/releases/tag/v3.0.0) to learn more.
 
-If you encounter any bugs or face difficulties during the upgrade process, please feel free to open an issue or start a discussion on [GitHub](https://github.com/satnaing/astro-paper).
+If you encounter any bugs or face difficulties during the upgrade process, please feel free to open an issue or start a discussion on [GitHub](https://github.com/miladsoft).
