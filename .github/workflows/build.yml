@@ -20,12 +20,6 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Install Dependencies
-        run: npm install --force
-
-      - name: Build
-        run: npm run build
-
       - name: Redirect 404 to Index for SPA
         run: cp dist/index.html dist/404.html
 

@@ -1,3 +1,0 @@
-# About
-
-Enjoy this site!
