@@ -1,457 +1,635 @@
 <!DOCTYPE html>
-<html lang="en" class="bg-[#0A0F14] text-[#D0D8E0] scroll-smooth">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Milad Raeisi - Full Stack Developer</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-      body {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Milad Raeisi - Blockchain & AI Developer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --bg-primary: #f8fafc;
+      --bg-secondary: #ffffff;
+      --bg-tertiary: #f1f5f9;
+      --text-primary: #334155;
+      --text-secondary: #64748b;
+      --text-accent: #0ea5e9;
+      --border-color: #e2e8f0;
+      --card-bg: #ffffff;
+      --nav-bg: rgba(248, 250, 252, 0.95);
+      --nav-border: #e2e8f0;
+    }
+
+    [data-theme="dark"] {
+      --bg-primary: #0f172a;
+      --bg-secondary: #1e293b;
+      --bg-tertiary: #334155;
+      --text-primary: #f1f5f9;
+      --text-secondary: #cbd5e1;
+      --text-accent: #38bdf8;
+      --border-color: #475569;
+      --card-bg: #1e293b;
+      --nav-bg: rgba(15, 23, 42, 0.95);
+      --nav-border: #475569;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .accent-text {
+      color: var(--text-accent);
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+      transition: all 0.3s ease;
+      border: 1px solid var(--border-color);
+    }
+
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px -3px rgb(0 0 0 / 0.1);
+    }
+
+    .nav-bg {
+      background: var(--nav-bg);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--nav-border);
+    }
+
+    .theme-toggle {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      color: var(--text-primary);
+      padding: 8px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-size: 1.2rem;
+    }
+
+    .theme-toggle:hover {
+      background: var(--bg-tertiary);
+    }
+
+    .section-white {
+      background: var(--bg-secondary);
+    }
+
+    .section-gray {
+      background: var(--bg-tertiary);
+    }    .footer-bg {
+      background: var(--bg-tertiary);
+      color: var(--text-primary);
+    }
+
+    [data-theme="dark"] .footer-bg {
+      background: #0f172a;
+    }
+
+    .hero-badge {
+      background: var(--text-accent);
+      color: white;
+      opacity: 0.9;
+    }
+
+    .hero-badge-text {
+      color: white;
+    }
+
+    .btn-primary {
+      background: var(--text-accent);
+      color: white;
+      transition: all 0.3s ease;
+    }
+
+    .social-link {
+      color: var(--text-secondary);
+      transition: all 0.3s ease;
+    }
+
+    .social-link:hover {
+      color: var(--text-accent);
+      transform: scale(1.1);
+    }
+
+    .social-link-text {
+      color: var(--text-secondary);
+      transition: color 0.3s ease;
+    }
+
+    .social-link:hover .social-link-text {
+      color: var(--text-accent);
+    }
+
+    .footer-text {
+      color: var(--text-secondary);
+    }
+
+    .footer-link {
+      color: var(--text-secondary);
+      transition: color 0.3s ease;
+    }
+
+    .footer-link:hover {
+      color: var(--text-primary);
+    }
+
+    .footer-border {
+      border-color: var(--border-color);
+    }
+
+    .mobile-menu {
+      display: none;
+    }
+
+    .mobile-menu.active {
+      display: block;
+    }
+
+    .hamburger {
+      cursor: pointer;
+      display: none;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .hamburger span {
+      width: 25px;
+      height: 2px;
+      background: var(--text-primary);
+      transition: 0.3s;
+    }
+
+    .nav-link {
+      color: var(--text-secondary);
+      transition: color 0.3s ease;
+    }
+
+    .nav-link:hover {
+      color: var(--text-accent);
+    }
+
+    .nav-title {
+      color: var(--text-primary);
+    }
+
+    .nav-subtitle {
+      color: var(--text-secondary);
+    }
+
+    @media (max-width: 768px) {
+      .text-responsive {
+        font-size: 2rem;
       }
 
-      .fade-in {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: opacity 0.8s ease, transform 0.8s ease;
+      .hamburger {
+        display: flex;
       }
 
-      .fade-in.visible {
-        opacity: 1;
-        transform: translateY(0);
-      }
-      
-      .accent-text {
-        color: #00E0C7;
-      }
-
-      .card {
-        background-color: rgba(16, 22, 29, 0.8);
-        border-radius: 12px;
-        transition: transform 0.4s ease;
-      }
-      
-      .card:hover {
-        transform: translateY(-5px);
-      }
-
-      .emoji {
-        font-size: 3.5rem;
-        line-height: 1;
-      }
-      
-      .hero-emoji {
-        font-size: 6rem;
-        animation: float 6s ease-in-out infinite;
-      }
-      
-      @keyframes float {
-        0% { transform: translateY(0px); }
-        50% { transform: translateY(-15px); }
-        100% { transform: translateY(0px); }
-      }      .nav-dot {
-        height: 10px;
-        width: 10px;
-        border-radius: 50%;
-        background: rgba(255,255,255,0.3);
-        transition: all 0.3s;
-      }
-      
-      .nav-dot.active {
-        background: #00E0C7;
-        transform: scale(1.5);
-        box-shadow: 0 0 10px #00E0C7;
-      }
-
-      .mobile-menu {
+      .desktop-nav {
         display: none;
       }
 
-      @media (max-width: 768px) {
-        .mobile-menu {
-          display: block;
-        }
+      .mobile-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--nav-bg);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--nav-border);
+        padding: 1rem;
       }
+    }
+  </style>
+</head>
 
-      .gradient-bg {
-        background: linear-gradient(135deg, #0A0F14 0%, #1A2332 100%);
-      }
-    </style>
-  </head>  
-  <body class="overflow-x-hidden">
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-[#0A0F14]/95 backdrop-blur-sm border-b border-[#1A2332]">
-      <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-        <div class="text-xl font-bold accent-text">Milad Raeisi</div>
-        <div class="hidden md:flex space-x-8">
-          <a href="#hero" class="text-[#D0D8E0] hover:text-[#00E0C7] transition">Home</a>
-          <a href="#about" class="text-[#D0D8E0] hover:text-[#00E0C7] transition">About</a>
-          <a href="#skills" class="text-[#D0D8E0] hover:text-[#00E0C7] transition">Skills</a>
-          <a href="#work" class="text-[#D0D8E0] hover:text-[#00E0C7] transition">Work</a>
-          <a href="#contact" class="text-[#D0D8E0] hover:text-[#00E0C7] transition">Contact</a>
-        </div>
-      </div>
-    </nav>
-      <!-- Hero Section -->
-    <section id="hero" class="min-h-screen flex flex-col items-center justify-center p-6 text-center pt-20">
-      <div class="hero-emoji mb-6">👨‍💻</div>
-      <h1 class="text-5xl md:text-7xl font-bold mb-3 fade-in">Milad Raeisi</h1>
-      <h2 class="text-2xl md:text-3xl mb-6 fade-in">
-        <span class="accent-text">Senior Blockchain Developer</span> & <span class="accent-text">AI Architect</span>
-      </h2>
-      <div class="flex flex-wrap justify-center gap-4 mb-8 fade-in">
-        <div class="bg-[#1A2332] px-4 py-2 rounded-full border border-[#00E0C7]/30">
-          <span class="text-sm">🧱 Blockcore Member</span>
-        </div>
-        <div class="bg-[#1A2332] px-4 py-2 rounded-full border border-[#00E0C7]/30">
-          <span class="text-sm">🎯 Angor Member</span>
-        </div>
-        <div class="bg-[#1A2332] px-4 py-2 rounded-full border border-[#00E0C7]/30">
-          <span class="text-sm">🚀 SBC Founder</span>
-        </div>
-      </div>
-      <p class="max-w-xl mx-auto mb-10 fade-in text-lg">
-        Architecting the future of decentralized finance and intelligent blockchain solutions
-      </p>
-      <a href="#about" class="bg-[#00E0C7] text-[#0A0F14] px-8 py-4 rounded-lg font-bold hover:bg-[#00B8A0] transition fade-in">
-        Explore My Work
-      </a>
-    </section>    <!-- About Section -->
-    <section id="about" class="min-h-screen flex items-center justify-center p-6 bg-[#0F1419]">
-      <div class="max-w-4xl mx-auto">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<body class="overflow-x-hidden">
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 nav-bg">
+    <div class="max-w-6xl mx-auto px-6 py-4">
+      <div class="flex justify-between items-center">
+        <div class="flex items-center space-x-3">
+          <div class="text-2xl">👨‍💻</div>
           <div>
-            <h2 class="text-4xl font-bold mb-6 fade-in">About Me <span class="ml-2">👤</span></h2>
-            <p class="text-lg mb-6 fade-in">
-              Senior Blockchain Developer and AI Architect with extensive expertise in decentralized technologies, 
-              smart contract development, and artificial intelligence systems.
-            </p>
-            <p class="text-lg mb-6 fade-in">
-              As a core member of <a href="https://blockcore.net/" class="accent-text hover:underline" target="_blank">Blockcore</a> 
-              and <a href="https://angor.io/" class="accent-text hover:underline" target="_blank">Angor</a>, I contribute to cutting-edge 
-              blockchain infrastructure and decentralized finance solutions.
-            </p>            <p class="text-lg fade-in">
-              Founder of <a href="https://seniorblockchain.io" class="accent-text font-semibold hover:underline" target="_blank">Senior Blockchain (SBC)</a>, driving innovation 
-              in enterprise blockchain solutions and consulting services.
-            </p>
+            <div class="text-xl font-bold nav-title">Milad Raeisi</div>
+            <div class="text-xs nav-subtitle">Blockchain & AI Developer</div>
           </div>
-          <div class="grid grid-cols-2 gap-4 fade-in">
-            <div class="card p-4 text-center">
-              <div class="text-2xl mb-2">🏢</div>
-              <h4 class="font-bold accent-text">SBC Founder</h4>
-              <p class="text-sm">Enterprise Solutions</p>
-            </div>
-            <div class="card p-4 text-center">
-              <div class="text-2xl mb-2">🧱</div>
-              <h4 class="font-bold accent-text">Blockcore</h4>
-              <p class="text-sm">Core Member</p>
-            </div>
-            <div class="card p-4 text-center">
-              <div class="text-2xl mb-2">🎯</div>
-              <h4 class="font-bold accent-text">Angor</h4>
-              <p class="text-sm">Active Contributor</p>
-            </div>
-            <div class="card p-4 text-center">
-              <div class="text-2xl mb-2">⚡</div>
-              <h4 class="font-bold accent-text">Innovation</h4>
-              <p class="text-sm">Blockchain & AI</p>
-            </div>
+        </div> <!-- Desktop Menu -->
+        <div class="hidden md:flex space-x-8 desktop-nav items-center">
+          <a href="#hero" class="nav-link font-medium">Home</a>
+          <a href="#about" class="nav-link font-medium">About</a>
+          <a href="#work" class="nav-link font-medium">Work</a>
+          <a href="#contact" class="nav-link font-medium">Contact</a>
+          <button class="theme-toggle" onclick="toggleTheme()" title="Toggle theme">
+            <span id="theme-icon">🌙</span>
+          </button>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <div class="flex items-center space-x-3 md:hidden">
+          <button class="theme-toggle" onclick="toggleTheme()" title="Toggle theme">
+            <span id="theme-icon-mobile">🌙</span>
+          </button>
+          <div class="hamburger" onclick="toggleMobileMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </div> <!-- Mobile Menu -->
+      <div class="mobile-menu" id="mobileMenu">
+        <div class="flex flex-col space-y-4">
+          <a href="#hero" class="nav-link font-medium" onclick="closeMobileMenu()">Home</a>
+          <a href="#about" class="nav-link font-medium" onclick="closeMobileMenu()">About</a>
+          <a href="#work" class="nav-link font-medium" onclick="closeMobileMenu()">Work</a>
+          <a href="#contact" class="nav-link font-medium" onclick="closeMobileMenu()">Contact</a>
+        </div>
+      </div>
+    </div>
+  </nav> <!-- Hero Section -->
+  <section id="hero" class="min-h-screen flex flex-col items-center justify-center p-6 text-center pt-20">
+    <div class="text-8xl mb-8">👨‍💻</div>
+    <h1 class="text-5xl md:text-7xl font-bold mb-4 fade-in" style="color: var(--text-primary);">Milad Raeisi</h1>
+    <h2 class="text-2xl md:text-3xl mb-8 fade-in" style="color: var(--text-secondary);">
+      Blockchain Developer & AI Architect
+    </h2>
+    <div class="flex flex-wrap justify-center gap-3 mb-10 fade-in">
+      <div class="hero-badge px-4 py-2 rounded-full">
+        <span class="text-sm hero-badge-text">🧱 Blockcore</span>
+      </div>
+      <div class="hero-badge px-4 py-2 rounded-full">
+        <span class="text-sm hero-badge-text">🎯 Angor</span>
+      </div>
+      <div class="hero-badge px-4 py-2 rounded-full">
+        <span class="text-sm hero-badge-text">🚀 SBC</span>
+      </div>
+    </div>
+    <a href="#work" class="btn-primary px-8 py-3 rounded-lg font-medium fade-in">
+      View Work
+    </a>
+  </section> <!-- About Section -->
+  <section id="about" class="py-20 section-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-4xl font-bold text-center mb-16 fade-in">About Me</h2>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <h3 class="text-2xl font-bold mb-6 fade-in" style="color: var(--text-primary);">Blockchain & AI Expert</h3>
+          <p class="text-lg mb-6 fade-in" style="color: var(--text-secondary);">
+            Senior developer building decentralized solutions and AI systems.
+          </p>
+          <p class="text-lg fade-in" style="color: var(--text-secondary);">
+            Core member at Blockcore and Angor. Founder of Senior Blockchain.
+          </p>
+        </div>
+        <div class="grid grid-cols-2 gap-6 fade-in">
+          <div class="card p-6 text-center">
+            <div class="text-3xl mb-3">🏢</div>
+            <h4 class="font-bold" style="color: var(--text-primary);">SBC</h4>
+            <p class="text-sm" style="color: var(--text-secondary);">Founder</p>
+          </div>
+          <div class="card p-6 text-center">
+            <div class="text-3xl mb-3">🧱</div>
+            <h4 class="font-bold" style="color: var(--text-primary);">Blockcore</h4>
+            <p class="text-sm" style="color: var(--text-secondary);">Core Member</p>
+          </div>
+          <div class="card p-6 text-center">
+            <div class="text-3xl mb-3">🎯</div>
+            <h4 class="font-bold" style="color: var(--text-primary);">Angor</h4>
+            <p class="text-sm" style="color: var(--text-secondary);">Core Member</p>
+          </div>
+          <div class="card p-6 text-center">
+            <div class="text-3xl mb-3">⚡</div>
+            <h4 class="font-bold" style="color: var(--text-primary);">Innovation</h4>
+            <p class="text-sm" style="color: var(--text-secondary);">Technology</p>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section> <!-- Work Section -->
+  <section id="work" class="py-20 section-gray">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-4xl font-bold text-center mb-16 fade-in">Work Experience</h2>
 
-    <!-- Skills Section -->
-    <section id="skills" class="min-h-screen flex items-center justify-center p-6">
-      <div class="max-w-4xl w-full">
-        <h2 class="text-4xl font-bold mb-10 text-center fade-in">Core Skills <span class="ml-2">🛠️</span></h2>        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div class="card p-8 text-center fade-in group">
-            <div class="emoji mb-4 group-hover:scale-110 transition-transform">🔗</div>
-            <h3 class="text-xl font-bold mb-3 accent-text">Blockchain Development</h3>
-            <p class="text-gray-300">Smart contracts, DeFi protocols, and decentralized applications</p>
-            <div class="mt-4 flex flex-wrap gap-2 justify-center">
-              <span class="bg-[#1A2332] px-2 py-1 rounded text-xs">Solidity</span>
-              <span class="bg-[#1A2332] px-2 py-1 rounded text-xs">Web3</span>
-              <span class="bg-[#1A2332] px-2 py-1 rounded text-xs">DeFi</span>
-            </div>
-          </div>
-          
-          <div class="card p-8 text-center fade-in group">
-            <div class="emoji mb-4 group-hover:scale-110 transition-transform">🧠</div>
-            <h3 class="text-xl font-bold mb-3 accent-text">AI & Machine Learning</h3>
-            <p class="text-gray-300">Intelligent systems and automated decision making</p>
-            <div class="mt-4 flex flex-wrap gap-2 justify-center">
-              <span class="bg-[#1A2332] px-2 py-1 rounded text-xs">Python</span>
-              <span class="bg-[#1A2332] px-2 py-1 rounded text-xs">TensorFlow</span>
-              <span class="bg-[#1A2332] px-2 py-1 rounded text-xs">NLP</span>
-            </div>
-          </div>
-          
-          <div class="card p-8 text-center fade-in group">
-            <div class="emoji mb-4 group-hover:scale-110 transition-transform">💻</div>
-            <h3 class="text-xl font-bold mb-3 accent-text">Software Architecture</h3>
-            <p class="text-gray-300">Scalable systems design and enterprise solutions</p>
-            <div class="mt-4 flex flex-wrap gap-2 justify-center">
-              <span class="bg-[#1A2332] px-2 py-1 rounded text-xs">Microservices</span>
-              <span class="bg-[#1A2332] px-2 py-1 rounded text-xs">Cloud</span>
-              <span class="bg-[#1A2332] px-2 py-1 rounded text-xs">DevOps</span>
-            </div>
-          </div>
-          
-          <div class="card p-8 text-center fade-in group">
-            <div class="emoji mb-4 group-hover:scale-110 transition-transform">🎨</div>
-            <h3 class="text-xl font-bold mb-3 accent-text">UI/UX Design</h3>
-            <p class="text-gray-300">User-centered design and modern interfaces</p>
-            <div class="mt-4 flex flex-wrap gap-2 justify-center">
-              <span class="bg-[#1A2332] px-2 py-1 rounded text-xs">Figma</span>
-              <span class="bg-[#1A2332] px-2 py-1 rounded text-xs">React</span>
-              <span class="bg-[#1A2332] px-2 py-1 rounded text-xs">Design Systems</span>
-            </div>
-          </div>
-          
-          <div class="card p-8 text-center fade-in group">
-            <div class="emoji mb-4 group-hover:scale-110 transition-transform">📊</div>
-            <h3 class="text-xl font-bold mb-3 accent-text">Data Science</h3>
-            <p class="text-gray-300">Analytics, insights, and data-driven solutions</p>
-            <div class="mt-4 flex flex-wrap gap-2 justify-center">
-              <span class="bg-[#1A2332] px-2 py-1 rounded text-xs">Analytics</span>
-              <span class="bg-[#1A2332] px-2 py-1 rounded text-xs">Visualization</span>
-              <span class="bg-[#1A2332] px-2 py-1 rounded text-xs">Big Data</span>
-            </div>
-          </div>
-          
-          <div class="card p-8 text-center fade-in group">
-            <div class="emoji mb-4 group-hover:scale-110 transition-transform">👑</div>
-            <h3 class="text-xl font-bold mb-3 accent-text">Leadership & Strategy</h3>
-            <p class="text-gray-300">Technical leadership and business strategy</p>
-            <div class="mt-4 flex flex-wrap gap-2 justify-center">
-              <span class="bg-[#1A2332] px-2 py-1 rounded text-xs">Team Lead</span>
-              <span class="bg-[#1A2332] px-2 py-1 rounded text-xs">Consulting</span>
-              <span class="bg-[#1A2332] px-2 py-1 rounded text-xs">Strategy</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>    <!-- Work Section -->
-    <section id="work" class="min-h-screen flex items-center justify-center p-6 bg-[#0F1419]">
-      <div class="max-w-5xl mx-auto">
-        <h2 class="text-4xl font-bold mb-12 text-center fade-in">Professional Experience <span class="ml-2">🌟</span></h2>
-        
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">          <!-- Senior Blockchain (SBC) -->
-          <div class="card p-8 fade-in">
-            <div class="flex items-center mb-6">
-              <span class="text-4xl mr-4">🚀</span>
-              <div>
-                <h3 class="text-xl font-bold accent-text">
-                  <a href="https://seniorblockchain.io" class="hover:underline" target="_blank">Senior Blockchain</a>
-                </h3>
-                <p class="text-sm text-gray-400">Founder & CEO</p>
-              </div>
-            </div>
-            <p class="font-semibold accent-text text-sm mb-2">Decentralizing Everything</p>
-
-            <p class="mb-4">
-              Leading software development with expertise in blockchain & AI innovation for modern businesses.
-            </p>
-            <ul class="list-disc ml-6 space-y-1 text-sm">
-              <li>Enterprise blockchain solutions</li>
-              <li>AI-powered business automation</li>
-              <li>Smart contract development</li>
-              <li>Modern technology consulting</li>
-            </ul>
-          </div>          
-          <!-- Blockcore -->
-          <div class="card p-8 fade-in">
-            <div class="flex items-center mb-6">
-              <span class="text-4xl mr-4">🧱</span>
-              <div>
-                <h3 class="text-xl font-bold accent-text">Blockcore</h3>
-                <p class="text-sm text-gray-400">Core Member</p>
-              </div>
-            </div>
-            <div class="mb-4">
-              <p class="font-semibold accent-text text-sm mb-2">Decentralizing Everything</p>
-              <p class="mb-3">
-                At <a href="https://blockcore.net/" class="accent-text hover:underline" target="_blank">Blockcore</a>, 
-                we build products that drive the decentralized future forward.
-              </p>
-            </div>
-            <ul class="list-disc ml-6 space-y-1 text-sm">
-              <li>Decentralized infrastructure</li>
-              <li>Foundational blockchain tools</li>
-              <li>Developer-focused solutions</li>
-              <li>Community-driven development</li>
-            </ul>
-          </div>          <!-- Angor -->
-          <div class="card p-8 fade-in">
-            <div class="flex items-center mb-6">
-              <span class="text-4xl mr-4">🎯</span>
-              <div>
-                <h3 class="text-xl font-bold accent-text">Angor</h3>
-                <p class="text-sm text-gray-400">Core Member</p>
-              </div>
-            </div>
-            <div class="mb-4">
-              <p class="font-semibold accent-text text-sm mb-2">A P2P funding protocol built on Bitcoin and Nostr</p>
-              <p class="mb-3">
-                <span class="font-medium">Decentralized crowdfunding</span> - We're revolutionizing Bitcoin crowdfunding with 
-                <a href="https://angor.io/" class="accent-text hover:underline" target="_blank">Angor</a>.
-              </p>
-            </div>
-            <ul class="list-disc ml-6 space-y-1 text-sm">
-              <li>Bitcoin-based funding protocol</li>
-              <li>Time-lock smart contracts</li>
-              <li>Investor fund recovery system</li>
-              <li>Nostr integration & transparency</li>
-            </ul>
-          </div>
-        </div>        <!-- Core Expertise & Technologies -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Senior Blockchain -->
         <div class="card p-8 fade-in">
-          <h3 class="text-2xl font-bold mb-6 text-center accent-text">Core Technologies & Expertise</h3>
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="text-center">
-              <div class="text-4xl mb-3">⛓️</div>
-              <h4 class="font-bold accent-text mb-2">Blockchain Platforms</h4>
-              <div class="text-sm space-y-1">
-                <div>Bitcoin • Ethereum • Solana</div>
-                <div>Polygon • Binance Smart Chain</div>
-                <div>Custom Layer 1 Solutions</div>
-              </div>
-            </div>
-            <div class="text-center">
-              <div class="text-4xl mb-3">💻</div>
-              <h4 class="font-bold accent-text mb-2">Development Stack</h4>
-              <div class="text-sm space-y-1">
-                <div>C# • TypeScript • Python</div>
-                <div>Solidity • Rust • Go</div>
-                <div>React • Node.js • .NET</div>
-              </div>
-            </div>
-            <div class="text-center">
-              <div class="text-4xl mb-3">👑</div>
-              <h4 class="font-bold accent-text mb-2">Tools & Frameworks</h4>
-              <div class="text-sm space-y-1">
-                <div>Hardhat • Truffle • Web3.js</div>
-                <div>Docker • Kubernetes</div>
-                <div>AWS • Azure • GCP</div>
-              </div>
-            </div>            <div class="text-center">
-              <div class="text-4xl mb-3">🔒</div>
-              <h4 class="font-bold accent-text mb-2">Security & Auditing</h4>
-              <div class="text-sm space-y-1">
-                <div>Smart Contract Audits</div>
-                <div>Penetration Testing</div>
-                <div>Security Best Practices</div>
-              </div>
-            </div>
-            <div class="text-center">
-              <div class="text-4xl mb-3">🤖</div>
-              <h4 class="font-bold accent-text mb-2">AI & Machine Learning</h4>
-              <div class="text-sm space-y-1">
-                <div>TensorFlow • PyTorch</div>
-                <div>Natural Language Processing</div>
-                <div>Computer Vision • MLOps</div>
-              </div>
-            </div>
-            <div class="text-center">
-              <div class="text-4xl mb-3">🏗️</div>
-              <h4 class="font-bold accent-text mb-2">Architecture & Design</h4>
-              <div class="text-sm space-y-1">
-                <div>Microservices Architecture</div>
-                <div>System Design • Scalability</div>
-                <div>DevOps • CI/CD Pipelines</div>
-              </div>
-            </div>
+          <div class="text-4xl mb-4 text-center">🚀</div>
+          <h3 class="text-xl font-bold accent-text text-center mb-2">
+            <a href="https://seniorblockchain.io" class="hover:underline" target="_blank">Senior Blockchain</a>
+          </h3>
+          <p class="text-center" style="color: var(--text-secondary);" mb-4">Founder & CEO</p>
+          <div class="space-y-2 text-sm" style="color: var(--text-secondary);">
+            <div>• Enterprise blockchain solutions</div>
+            <div>• AI-powered automation</div>
+            <div>• Smart contract development</div>
+            <div>• Technology consulting</div>
+          </div>
+        </div>
+
+        <!-- Blockcore -->
+        <div class="card p-8 fade-in">
+          <div class="text-4xl mb-4 text-center">🧱</div>
+          <h3 class="text-xl font-bold accent-text text-center mb-2">
+            <a href="https://blockcore.net/" class="hover:underline" target="_blank">Blockcore</a>
+          </h3>
+          <p class="text-center mb-4" style="color: var(--text-secondary);">Core Member</p>
+          <div class="space-y-2 text-sm" style="color: var(--text-secondary);">
+            <div>• Decentralized infrastructure</div>
+            <div>• Blockchain tools</div>
+            <div>• Developer solutions</div>
+            <div>• Community development</div>
+          </div>
+        </div>
+
+        <!-- Angor -->
+        <div class="card p-8 fade-in">
+          <div class="text-4xl mb-4 text-center">🎯</div>
+          <h3 class="text-xl font-bold accent-text text-center mb-2">
+            <a href="https://angor.io/" class="hover:underline" target="_blank">Angor</a>
+          </h3>
+          <p class="text-center mb-4" style="color: var(--text-secondary);">Core Member</p>
+          <div class="space-y-2 text-sm" style="color: var(--text-secondary);">
+            <div>• Bitcoin funding protocol</div>
+            <div>• Time-lock contracts</div>
+            <div>• Fund recovery system</div>
+            <div>• Nostr integration</div>
           </div>
         </div>
       </div>
-    </section>    <!-- Contact Section -->
-    <section id="contact" class="min-h-screen flex items-center justify-center p-6 text-center">
-      <div class="max-w-4xl mx-auto">
-        <div class="hero-emoji mb-8">📧</div>
-        <h2 class="text-4xl font-bold mb-6 fade-in">Let's Build the Future Together</h2>
-        <p class="text-xl max-w-2xl mx-auto mb-12 fade-in text-gray-300">
-          Ready to transform your ideas into revolutionary blockchain and AI solutions? 
-          Let's discuss how we can collaborate to create something extraordinary.
-        </p>
-        
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-          <div class="card p-6 fade-in">
-            <div class="text-3xl mb-4">💼</div>
-            <h3 class="font-bold accent-text mb-2">Business Inquiries</h3>
-            <p class="text-sm text-gray-400">Enterprise solutions and consulting</p>
+
+      <!-- Skills Section -->
+      <div class="mt-20">
+        <h3 class="text-3xl font-bold text-center mb-12 fade-in">Skills & Technologies</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="card p-6 text-center fade-in">
+            <div class="text-3xl mb-3">⛓️</div>
+            <h4 class="font-bold accent-text mb-2">Blockchain</h4>
+            <div class="text-sm" style="color: var(--text-secondary);">Bitcoin • Ethereum • Smart Contracts</div>
           </div>
-          <div class="card p-6 fade-in">
-            <div class="text-3xl mb-4">🤝</div>
-            <h3 class="font-bold accent-text mb-2">Partnerships</h3>
-            <p class="text-sm text-gray-400">Strategic collaborations and joint ventures</p>
+          <div class="card p-6 text-center fade-in">
+            <div class="text-3xl mb-3">🧠</div>
+            <h4 class="font-bold accent-text mb-2">AI & ML</h4>
+            <div class="text-sm" style="color: var(--text-secondary);">Python • TensorFlow • NLP</div>
           </div>
-          <div class="card p-6 fade-in">
-            <div class="text-3xl mb-4">🎓</div>
-            <h3 class="font-bold accent-text mb-2">Speaking & Training</h3>
-            <p class="text-sm text-gray-400">Technical workshops and conferences</p>
+          <div class="card p-6 text-center fade-in">
+            <div class="text-3xl mb-3">💻</div>
+            <h4 class="font-bold accent-text mb-2">Development</h4>
+            <div class="text-sm" style="color: var(--text-secondary);">C# • TypeScript • React</div>
+          </div>
+          <div class="card p-6 text-center fade-in">
+            <div class="text-3xl mb-3">☁️</div>
+            <h4 class="font-bold accent-text mb-2">Cloud</h4>
+            <div class="text-sm" style="color: var(--text-secondary);">AWS • Azure • Docker</div>
+          </div>
+          <div class="card p-6 text-center fade-in">
+            <div class="text-3xl mb-3">🔒</div>
+            <h4 class="font-bold accent-text mb-2">Security</h4>
+            <div class="text-sm" style="color: var(--text-secondary);">Audits • Penetration Testing</div>
+          </div>
+          <div class="card p-6 text-center fade-in">
+            <div class="text-3xl mb-3">👑</div>
+            <h4 class="font-bold accent-text mb-2">Leadership</h4>
+            <div class="text-sm" style="color: var(--text-secondary);">Team Lead • Strategy • Consulting</div>
           </div>
         </div>
-        
-        <div class="mb-8 fade-in">
-          <a href="mailto:info@miladraeisi.com" class="bg-[#00E0C7] text-[#0A0F14] px-8 py-4 rounded-lg font-bold hover:bg-[#00B8A0] transition text-lg">
+      </div>
+    </div>
+  </section><!-- Contact Section -->
+  <section id="contact" class="py-20 section-white">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <div class="text-6xl mb-8">📧</div>
+      <h2 class="text-4xl font-bold mb-6 fade-in" style="color: var(--text-primary);">Let's Build Together</h2>
+      <p class="text-xl max-w-2xl mx-auto mb-12 fade-in" style="color: var(--text-secondary);">
+        Ready to transform your ideas into blockchain and AI solutions?
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        <div class="card p-6 fade-in">
+          <div class="text-3xl mb-4">💼</div>
+          <h3 class="font-bold accent-text mb-2">Business</h3>
+          <p class="text-sm" style="color: var(--text-secondary);">Enterprise solutions</p>
+        </div>
+        <div class="card p-6 fade-in">
+          <div class="text-3xl mb-4">🤝</div>
+          <h3 class="font-bold accent-text mb-2">Partnerships</h3>
+          <p class="text-sm" style="color: var(--text-secondary);">Strategic collaborations</p>
+        </div>
+        <div class="card p-6 fade-in">
+          <div class="text-3xl mb-4">🎓</div>
+          <h3 class="font-bold accent-text mb-2">Speaking</h3>
+          <p class="text-sm" style="color: var(--text-secondary);">Technical workshops</p>
+        </div>
+      </div>
+      <div class="mb-8 fade-in">
+        <a href="mailto:info@miladraeisi.com" class="btn-primary px-8 py-4 rounded-lg font-bold text-lg">
+          📧 info@miladraeisi.com
+        </a>
+      </div>
+      <div class="flex justify-center space-x-8 fade-in">
+        <a href="https://linkedin.com/in/miladsoft" target="_blank" class="social-link group">
+          <div class="text-4xl hover:scale-110 transition-transform">💼</div>
+          <div class="text-sm mt-2 social-link-text">LinkedIn</div>
+        </a>
+        <a href="https://github.com/miladsoft" target="_blank" class="social-link group">
+          <div class="text-4xl hover:scale-110 transition-transform">💻</div>
+          <div class="text-sm mt-2 social-link-text">GitHub</div>
+        </a>
+        <a href="https://twitter.com/miladsoft" target="_blank" class="social-link group">
+          <div class="text-4xl hover:scale-110 transition-transform">🐦</div>
+          <div class="text-sm mt-2 social-link-text">Twitter</div>
+        </a>
+        <a href="https://primal.net/p/npub1tapj48eekk8lzvhupfxg4ugdgthaj97cqahk3wml97g76l20dfqspmpjyp" target="_blank"
+          class="social-link group">
+          <div class="text-4xl hover:scale-110 transition-transform">🟣</div>
+          <div class="text-sm mt-2 social-link-text">Nostr</div>
+        </a>
+      </div>
+    </div>
+  </section> 
+  
+  <!-- Footer -->
+  <footer class="footer-bg py-16">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <!-- Brand -->
+        <div class="col-span-1 md:col-span-2">
+          <div class="flex items-center space-x-3 mb-4">
+            <div class="text-2xl">👨‍💻</div>
+            <div>
+              <div class="text-xl font-bold" style="color: var(--text-primary);">Milad Raeisi</div>
+              <div class="text-sm footer-text">Blockchain & AI Developer</div>
+            </div>
+          </div>
+          <p class="footer-text mb-6 max-w-md">
+            Building the future of decentralized finance and intelligent blockchain solutions.
+            Core member at Blockcore and Angor, Founder of Senior Blockchain.
+          </p>
+          <div class="flex space-x-4">
+            <a href="https://linkedin.com/in/miladsoft" target="_blank" class="footer-link">
+              <span class="text-xl">💼</span>
+            </a>
+            <a href="https://github.com/miladsoft" target="_blank" class="footer-link">
+              <span class="text-xl">💻</span>
+            </a>
+            <a href="https://twitter.com/miladsoft" target="_blank" class="footer-link">
+              <span class="text-xl">🐦</span>
+            </a>
+            <a href="https://primal.net/p/npub1tapj48eekk8lzvhupfxg4ugdgthaj97cqahk3wml97g76l20dfqspmpjyp"
+              target="_blank" class="footer-link">
+              <span class="text-xl">🟣</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="font-bold mb-4" style="color: var(--text-primary);">Quick Links</h4>
+          <div class="space-y-2">
+            <a href="#hero" class="block footer-link">Home</a>
+            <a href="#about" class="block footer-link">About</a>
+            <a href="#work" class="block footer-link">Work</a>
+            <a href="#contact" class="block footer-link">Contact</a>
+          </div>
+        </div>
+
+        <!-- Projects -->
+        <div>
+          <h4 class="font-bold mb-4" style="color: var(--text-primary);">Projects</h4>
+          <div class="space-y-2">
+            <a href="https://seniorblockchain.io" target="_blank" class="block footer-link">Senior Blockchain</a>
+            <a href="https://blockcore.net/" target="_blank" class="block footer-link">Blockcore</a>
+            <a href="https://angor.io/" target="_blank" class="block footer-link">Angor</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="border-t footer-border mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+        <div class="footer-text text-sm mb-4 md:mb-0">
+          © 2024 Milad Raeisi. All rights reserved.
+        </div>
+        <div class="flex space-x-6 text-sm">
+          <a href="mailto:info@miladraeisi.com" class="footer-link">
             📧 info@miladraeisi.com
           </a>
         </div>
-        
-        <div class="flex justify-center space-x-8 fade-in">
-          <a href="https://linkedin.com/in/miladsoft" target="_blank" class="group">
-            <div class="text-4xl hover:scale-110 transition-transform group-hover:text-[#00E0C7]">💼</div>
-            <div class="text-sm mt-2 text-gray-400 group-hover:text-[#00E0C7]">LinkedIn</div>
-          </a>
-          <a href="https://github.com/miladsoft" target="_blank" class="group">
-            <div class="text-4xl hover:scale-110 transition-transform group-hover:text-[#00E0C7]">💻</div>
-            <div class="text-sm mt-2 text-gray-400 group-hover:text-[#00E0C7]">GitHub</div>
-          </a>
-          <a href="https://twitter.com/miladsoft" target="_blank" class="group">
-            <div class="text-4xl hover:scale-110 transition-transform group-hover:text-[#00E0C7]">🐦</div>
-            <div class="text-sm mt-2 text-gray-400 group-hover:text-[#00E0C7]">Twitter</div>
-          </a>
-        </div>
       </div>
-    </section>    <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        // Fade in elements as they enter viewport
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('visible');
-            }
-          });
-        }, { threshold: 0.1 });
+    </div>
+  </footer>
+  <script>
+    // Theme toggle functionality
+    function toggleTheme() {
+      const html = document.documentElement;
+      const currentTheme = html.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
 
-        document.querySelectorAll('.fade-in').forEach(el => {
-          observer.observe(el);
-        });
-        
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-          anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-              target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-              });
-            }
-          });
-        });
+      html.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
 
-        // Add scroll effect to navigation
-        const nav = document.querySelector('nav');
-        window.addEventListener('scroll', () => {
-          if (window.scrollY > 100) {
-            nav.classList.add('bg-[#0A0F14]');
-          } else {
-            nav.classList.remove('bg-[#0A0F14]');
+      // Update theme icons
+      const themeIcon = document.getElementById('theme-icon');
+      const themeIconMobile = document.getElementById('theme-icon-mobile');
+      const icon = newTheme === 'dark' ? '☀️' : '🌙';
+
+      if (themeIcon) themeIcon.textContent = icon;
+      if (themeIconMobile) themeIconMobile.textContent = icon;
+    }
+
+    // Initialize theme on page load
+    function initTheme() {
+      const savedTheme = localStorage.getItem('theme') || 'light';
+      const html = document.documentElement;
+      html.setAttribute('data-theme', savedTheme);
+
+      // Update theme icons
+      const themeIcon = document.getElementById('theme-icon');
+      const themeIconMobile = document.getElementById('theme-icon-mobile');
+      const icon = savedTheme === 'dark' ? '☀️' : '🌙';
+
+      if (themeIcon) themeIcon.textContent = icon;
+      if (themeIconMobile) themeIconMobile.textContent = icon;
+    }
+
+    // Mobile menu functions
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('active');
+    }
+
+    function closeMobileMenu() {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.remove('active');
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+     
+      // Initialize theme
+      initTheme();
+     
+      // Fade in elements as they enter viewport
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
           }
         });
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll('.fade-in').forEach(el => {
+        observer.observe(el);
       });
-    </script>
-  </body>
+
+      // Smooth scrolling for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });        
+      
+      // Add scroll effect to navigation
+      const nav = document.querySelector('nav');
+      window.addEventListener('scroll', () => {
+        const html = document.documentElement;
+        const currentTheme = html.getAttribute('data-theme');
+
+        if (window.scrollY > 100) {
+          if (currentTheme === 'dark') {
+            nav.style.background = 'rgba(15, 23, 42, 0.98)';
+          } else {
+            nav.style.background = 'rgba(248, 250, 252, 0.98)';
+          }
+        } else {
+          nav.style.background = 'var(--nav-bg)';
+        }
+      });
+    });
+  </script>
+</body>
+
 </html>
