@@ -2,633 +2,1818 @@
 <html lang="en" class="scroll-smooth">
 
 <head>
+  <!-- Primary Meta Tags -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Milad Raeisi - Blockchain & AI Developer</title>
+  <title>Milad Raeisi — Senior Blockchain Developer & AI Architect | Blockcore, Angor, SBC</title>
+  <meta name="description" content="Milad Raeisi is a senior blockchain developer and AI architect. Core member at Blockcore and Angor, Founder of Senior Blockchain (SBC). Expert in Bitcoin, Ethereum, smart contracts, decentralized infrastructure, and AI-powered solutions." />
+  <meta name="keywords" content="Milad Raeisi, Blockchain Developer, AI Architect, Blockcore, Angor, Senior Blockchain, SBC, Bitcoin, Ethereum, Smart Contracts, Decentralized Finance, DeFi, Web3, Nostr, C#, TypeScript, Python, TensorFlow" />
+  <meta name="author" content="Milad Raeisi" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://miladraeisi.com/" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://miladraeisi.com/" />
+  <meta property="og:title" content="Milad Raeisi — Senior Blockchain Developer & AI Architect" />
+  <meta property="og:description" content="Core member at Blockcore and Angor, Founder of Senior Blockchain. Building decentralized solutions and AI systems." />
+  <meta property="og:site_name" content="Milad Raeisi" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@miladsoft" />
+  <meta name="twitter:creator" content="@miladsoft" />
+  <meta name="twitter:title" content="Milad Raeisi — Senior Blockchain Developer & AI Architect" />
+  <meta name="twitter:description" content="Core member at Blockcore and Angor, Founder of Senior Blockchain. Building decentralized solutions and AI systems." />
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Milad Raeisi",
+    "url": "https://miladraeisi.com",
+    "email": "info@miladraeisi.com",
+    "jobTitle": "Senior Blockchain Developer & AI Architect",
+    "description": "Core member at Blockcore and Angor, Founder of Senior Blockchain (SBC). Expert in decentralized infrastructure, smart contracts, and AI-powered solutions.",
+    "sameAs": [
+      "https://linkedin.com/in/miladsoft",
+      "https://github.com/miladsoft",
+      "https://twitter.com/miladsoft"
+    ],
+    "worksFor": [
+      {
+        "@type": "Organization",
+        "name": "Senior Blockchain",
+        "url": "https://seniorblockchain.io"
+      },
+      {
+        "@type": "Organization",
+        "name": "Blockcore",
+        "url": "https://blockcore.net"
+      },
+      {
+        "@type": "Organization",
+        "name": "Angor",
+        "url": "https://angor.io"
+      }
+    ],
+    "knowsAbout": ["Blockchain", "Bitcoin", "Ethereum", "Smart Contracts", "Artificial Intelligence", "Machine Learning", "Decentralized Finance", "Web3", "Nostr"]
+  }
+  </script>
+
+  <!-- Preconnect & Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
   <style>
+    /* ===== CSS Custom Properties ===== */
     :root {
       --bg-primary: #f8fafc;
       --bg-secondary: #ffffff;
       --bg-tertiary: #f1f5f9;
-      --text-primary: #334155;
+      --text-primary: #0f172a;
       --text-secondary: #64748b;
       --text-accent: #0ea5e9;
+      --text-accent-2: #6366f1;
       --border-color: #e2e8f0;
       --card-bg: #ffffff;
-      --nav-bg: rgba(248, 250, 252, 0.95);
-      --nav-border: #e2e8f0;
+      --card-bg-hover: #f8fafc;
+      --nav-bg: rgba(255, 255, 255, 0.85);
+      --nav-border: rgba(226, 232, 240, 0.6);
+      --gradient-1: #0ea5e9;
+      --gradient-2: #6366f1;
+      --gradient-3: #8b5cf6;
+      --glow-color: rgba(14, 165, 233, 0.15);
+      --particle-color: rgba(14, 165, 233, 0.08);
+      --hero-orb-1: rgba(14, 165, 233, 0.08);
+      --hero-orb-2: rgba(99, 102, 241, 0.06);
+      --hero-orb-3: rgba(139, 92, 246, 0.05);
     }
 
     [data-theme="dark"] {
-      --bg-primary: #0f172a;
-      --bg-secondary: #1e293b;
-      --bg-tertiary: #334155;
+      --bg-primary: #0a0f1e;
+      --bg-secondary: #111827;
+      --bg-tertiary: #1a2235;
       --text-primary: #f1f5f9;
-      --text-secondary: #cbd5e1;
+      --text-secondary: #94a3b8;
       --text-accent: #38bdf8;
-      --border-color: #475569;
-      --card-bg: #1e293b;
-      --nav-bg: rgba(15, 23, 42, 0.95);
-      --nav-border: #475569;
+      --text-accent-2: #818cf8;
+      --border-color: rgba(71, 85, 105, 0.5);
+      --card-bg: rgba(30, 41, 59, 0.7);
+      --card-bg-hover: rgba(30, 41, 59, 0.9);
+      --nav-bg: rgba(10, 15, 30, 0.88);
+      --nav-border: rgba(71, 85, 105, 0.3);
+      --glow-color: rgba(56, 189, 248, 0.1);
+      --particle-color: rgba(56, 189, 248, 0.05);
+      --hero-orb-1: rgba(56, 189, 248, 0.06);
+      --hero-orb-2: rgba(129, 140, 248, 0.05);
+      --hero-orb-3: rgba(167, 139, 250, 0.04);
+    }
+
+    /* ===== Base Styles ===== */
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
       background: var(--bg-primary);
       color: var(--text-primary);
-      transition: background-color 0.3s ease, color 0.3s ease;
+      transition: background-color 0.4s ease, color 0.4s ease;
+      overflow-x: hidden;
+      line-height: 1.7;
     }
 
-    .fade-in {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
+    ::selection {
+      background: var(--text-accent);
+      color: white;
     }
 
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .accent-text {
-      color: var(--text-accent);
-    }
-
-    .card {
-      background: var(--card-bg);
-      border-radius: 12px;
-      box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
-      transition: all 0.3s ease;
-      border: 1px solid var(--border-color);
-    }
-
-    .card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 25px -3px rgb(0 0 0 / 0.1);
-    }
-
-    .nav-bg {
+    /* ===== Navigation ===== */
+    .nav-glass {
       background: var(--nav-bg);
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
       border-bottom: 1px solid var(--nav-border);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .nav-glass.scrolled {
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    [data-theme="dark"] .nav-glass.scrolled {
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .nav-link {
+      color: var(--text-secondary);
+      font-weight: 500;
+      position: relative;
+      padding: 6px 0;
+      transition: color 0.3s ease;
+      font-size: 0.95rem;
+      letter-spacing: -0.01em;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 0; height: 2px;
+      background: linear-gradient(90deg, var(--gradient-1), var(--gradient-2));
+      border-radius: 2px;
+      transition: width 0.3s ease;
+    }
+
+    .nav-link:hover { color: var(--text-accent); }
+    .nav-link:hover::after { width: 100%; }
+    .nav-link.active { color: var(--text-accent); }
+    .nav-link.active::after { width: 100%; }
+
+    .nav-logo-text {
+      background: linear-gradient(135deg, var(--gradient-1), var(--gradient-2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: 800;
+      letter-spacing: -0.03em;
     }
 
     .theme-toggle {
       background: var(--card-bg);
       border: 1px solid var(--border-color);
       color: var(--text-primary);
-      padding: 8px 12px;
-      border-radius: 8px;
+      width: 40px; height: 40px;
+      border-radius: 10px;
       cursor: pointer;
       transition: all 0.3s ease;
-      font-size: 1.2rem;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .theme-toggle:hover {
-      background: var(--bg-tertiary);
+      background: var(--glow-color);
+      border-color: var(--text-accent);
+      transform: rotate(15deg);
     }
 
-    .section-white {
-      background: var(--bg-secondary);
+    /* Mobile Menu */
+    .hamburger {
+      cursor: pointer;
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      padding: 4px;
+      z-index: 60;
     }
 
-    .section-gray {
-      background: var(--bg-tertiary);
-    }    .footer-bg {
-      background: var(--bg-tertiary);
-      color: var(--text-primary);
+    .hamburger span {
+      width: 22px; height: 2px;
+      background: var(--text-primary);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      border-radius: 2px;
     }
 
-    [data-theme="dark"] .footer-bg {
-      background: #0f172a;
+    .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+    .mobile-menu {
+      display: none;
+      opacity: 0;
+      transform: translateY(-10px);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .mobile-menu.active {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 768px) {
+      .hamburger { display: flex; }
+      .desktop-nav { display: none !important; }
+      .mobile-menu {
+        position: absolute;
+        top: 100%; left: 0; right: 0;
+        background: var(--nav-bg);
+        backdrop-filter: blur(20px);
+        border-bottom: 1px solid var(--nav-border);
+        padding: 1.5rem;
+      }
+    }
+
+    /* ===== Hero Section ===== */
+    .hero-section {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: var(--bg-primary);
+    }
+
+    /* Parallax floating orbs */
+    .hero-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      pointer-events: none;
+      will-change: transform;
+    }
+
+    .hero-orb-1 {
+      width: 600px; height: 600px;
+      background: var(--hero-orb-1);
+      top: -10%; right: -5%;
+      animation: floatOrb1 20s ease-in-out infinite;
+    }
+
+    .hero-orb-2 {
+      width: 500px; height: 500px;
+      background: var(--hero-orb-2);
+      bottom: -15%; left: -10%;
+      animation: floatOrb2 25s ease-in-out infinite;
+    }
+
+    .hero-orb-3 {
+      width: 400px; height: 400px;
+      background: var(--hero-orb-3);
+      top: 40%; left: 50%;
+      animation: floatOrb3 18s ease-in-out infinite;
+    }
+
+    @keyframes floatOrb1 {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33% { transform: translate(-40px, 30px) scale(1.05); }
+      66% { transform: translate(20px, -20px) scale(0.95); }
+    }
+
+    @keyframes floatOrb2 {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33% { transform: translate(30px, -40px) scale(1.08); }
+      66% { transform: translate(-20px, 20px) scale(0.92); }
+    }
+
+    @keyframes floatOrb3 {
+      0%, 100% { transform: translate(-50%, 0) scale(1); }
+      50% { transform: translate(-50%, -30px) scale(1.1); }
+    }
+
+    /* Grid pattern overlay */
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(var(--particle-color) 1px, transparent 1px),
+        linear-gradient(90deg, var(--particle-color) 1px, transparent 1px);
+      background-size: 60px 60px;
+      opacity: 0.5;
+      mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+      -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+    }
+
+    /* Floating particles */
+    .particles-container {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .particle {
+      position: absolute;
+      width: 3px; height: 3px;
+      background: var(--text-accent);
+      border-radius: 50%;
+      opacity: 0;
+      animation: particleFloat linear infinite;
+    }
+
+    @keyframes particleFloat {
+      0% { opacity: 0; transform: translateY(100vh) scale(0); }
+      10% { opacity: 0.6; }
+      90% { opacity: 0.6; }
+      100% { opacity: 0; transform: translateY(-10vh) scale(1); }
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, var(--gradient-1) 0%, var(--gradient-2) 50%, var(--gradient-3) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      background-size: 200% 200%;
+      animation: gradientShift 6s ease-in-out infinite;
+    }
+
+    @keyframes gradientShift {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
     }
 
     .hero-badge {
-      background: var(--text-accent);
-      color: white;
-      opacity: 0.9;
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+      color: var(--text-primary);
     }
 
-    .hero-badge-text {
-      color: white;
+    .hero-badge:hover {
+      border-color: var(--text-accent);
+      background: var(--glow-color);
+      transform: translateY(-2px);
     }
 
     .btn-primary {
-      background: var(--text-accent);
+      background: linear-gradient(135deg, var(--gradient-1), var(--gradient-2));
       color: white;
-      transition: all 0.3s ease;
+      font-weight: 600;
+      padding: 14px 36px;
+      border-radius: 12px;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(14, 165, 233, 0.25);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
     }
 
-    .social-link {
-      color: var(--text-secondary);
-      transition: all 0.3s ease;
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(14, 165, 233, 0.35);
     }
 
-    .social-link:hover {
+    .btn-primary::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--gradient-2), var(--gradient-3));
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .btn-primary:hover::before { opacity: 1; }
+    .btn-primary span { position: relative; z-index: 1; }
+
+    .btn-outline {
+      border: 2px solid var(--border-color);
+      color: var(--text-primary);
+      font-weight: 600;
+      padding: 12px 34px;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      background: transparent;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--text-accent);
       color: var(--text-accent);
-      transform: scale(1.1);
+      background: var(--glow-color);
+      transform: translateY(-2px);
     }
 
-    .social-link-text {
+    /* Scroll indicator */
+    .scroll-indicator {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: bounce 2s ease-in-out infinite;
+    }
+
+    .scroll-indicator-dot {
+      width: 6px; height: 6px;
+      background: var(--text-accent);
+      border-radius: 50%;
+      animation: scrollDot 2s ease-in-out infinite;
+    }
+
+    .scroll-indicator-line {
+      width: 24px; height: 40px;
+      border: 2px solid var(--border-color);
+      border-radius: 12px;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      padding-top: 6px;
+    }
+
+    @keyframes scrollDot {
+      0%, 100% { transform: translateY(0); opacity: 1; }
+      50% { transform: translateY(16px); opacity: 0.3; }
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(-8px); }
+    }
+
+    /* Typewriter cursor */
+    .typewriter-cursor {
+      display: inline-block;
+      width: 3px;
+      height: 1em;
+      background: var(--text-accent);
+      margin-left: 4px;
+      animation: blink 1s steps(1) infinite;
+      vertical-align: text-bottom;
+    }
+
+    @keyframes blink {
+      0%, 50% { opacity: 1; }
+      51%, 100% { opacity: 0; }
+    }
+
+    /* ===== Section Styles ===== */
+    .section-padding {
+      padding: 120px 0;
+    }
+
+    .section-bg-primary { background: var(--bg-primary); }
+    .section-bg-secondary { background: var(--bg-secondary); }
+
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--text-primary);
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .section-subtitle {
+      font-size: 1.15rem;
       color: var(--text-secondary);
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 4rem;
+      line-height: 1.8;
+    }
+
+    .accent-text {
+      color: var(--text-accent);
+    }
+
+    .accent-line {
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--gradient-1), var(--gradient-2));
+      border-radius: 4px;
+      margin: 0 auto 2rem;
+    }
+
+    /* ===== Cards ===== */
+    .card {
+      background: var(--card-bg);
+      border-radius: 16px;
+      border: 1px solid var(--border-color);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 16px;
+      padding: 1px;
+      background: linear-gradient(135deg, transparent, transparent);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      transition: background 0.4s ease;
+      pointer-events: none;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.12);
+      border-color: transparent;
+    }
+
+    [data-theme="dark"] .card:hover {
+      box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.4);
+    }
+
+    .card:hover::before {
+      background: linear-gradient(135deg, var(--gradient-1), var(--gradient-2));
+    }
+
+    .card-icon {
+      width: 56px; height: 56px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+      font-size: 1.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .card-icon-blue {
+      background: rgba(14, 165, 233, 0.1);
+      color: var(--gradient-1);
+    }
+
+    .card-icon-indigo {
+      background: rgba(99, 102, 241, 0.1);
+      color: var(--gradient-2);
+    }
+
+    .card-icon-violet {
+      background: rgba(139, 92, 246, 0.1);
+      color: var(--gradient-3);
+    }
+
+    .card:hover .card-icon {
+      transform: scale(1.1) rotate(5deg);
+    }
+
+    /* ===== Stats Section ===== */
+    .stats-section {
+      position: relative;
+      background: var(--bg-secondary);
+      overflow: hidden;
+    }
+
+    .stats-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 20% 50%, var(--hero-orb-1), transparent 50%),
+        radial-gradient(ellipse at 80% 50%, var(--hero-orb-2), transparent 50%);
+      pointer-events: none;
+    }
+
+    .stat-item {
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    .stat-number {
+      font-size: 3rem;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+
+    /* ===== Work / Experience Cards ===== */
+    .work-card {
+      position: relative;
+      padding: 2.5rem;
+    }
+
+    .work-card-tag {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .tag-founder {
+      background: rgba(14, 165, 233, 0.1);
+      color: var(--gradient-1);
+    }
+
+    .tag-core {
+      background: rgba(99, 102, 241, 0.1);
+      color: var(--gradient-2);
+    }
+
+    .work-card h3 a {
+      color: var(--text-primary);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.35rem;
       transition: color 0.3s ease;
     }
 
-    .social-link:hover .social-link-text {
+    .work-card h3 a:hover {
       color: var(--text-accent);
     }
 
-    .footer-text {
+    .work-card-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+    }
+
+    .work-card-list li {
+      padding: 6px 0;
       color: var(--text-secondary);
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .work-card-list li::before {
+      content: '';
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--gradient-1), var(--gradient-2));
+      flex-shrink: 0;
+    }
+
+    /* ===== Skills Section ===== */
+    .skill-card {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .skill-bar-track {
+      width: 100%;
+      height: 4px;
+      background: var(--bg-tertiary);
+      border-radius: 4px;
+      margin-top: 1rem;
+      overflow: hidden;
+    }
+
+    .skill-bar-fill {
+      height: 100%;
+      border-radius: 4px;
+      background: linear-gradient(90deg, var(--gradient-1), var(--gradient-2));
+      width: 0;
+      transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .skill-bar-fill.animated {
+      width: var(--fill-width);
+    }
+
+    /* ===== Parallax Dividers ===== */
+    .parallax-divider {
+      position: relative;
+      height: 300px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .parallax-bg {
+      position: absolute;
+      inset: -50px;
+      background:
+        radial-gradient(ellipse at 30% 40%, var(--hero-orb-1) 0%, transparent 50%),
+        radial-gradient(ellipse at 70% 60%, var(--hero-orb-2) 0%, transparent 50%),
+        var(--bg-primary);
+      will-change: transform;
+    }
+
+    .parallax-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+
+    .parallax-quote {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.6;
+      letter-spacing: -0.02em;
+    }
+
+    .parallax-shapes {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .parallax-shape {
+      position: absolute;
+      border: 2px solid var(--border-color);
+      opacity: 0.3;
+      will-change: transform;
+    }
+
+    .shape-circle {
+      border-radius: 50%;
+    }
+
+    .shape-square {
+      border-radius: 4px;
+    }
+
+    /* ===== Contact Section ===== */
+    .contact-card-glow {
+      position: relative;
+    }
+
+    .contact-card-glow::after {
+      content: '';
+      position: absolute;
+      inset: -1px;
+      background: linear-gradient(135deg, var(--gradient-1), var(--gradient-2), var(--gradient-3));
+      border-radius: 17px;
+      z-index: -1;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      filter: blur(8px);
+    }
+
+    .contact-card-glow:hover::after {
+      opacity: 0.3;
+    }
+
+    /* Social Links */
+    .social-icon {
+      width: 48px; height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      color: var(--text-secondary);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      text-decoration: none;
+    }
+
+    .social-icon:hover {
+      background: var(--glow-color);
+      border-color: var(--text-accent);
+      color: var(--text-accent);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 25px rgba(14, 165, 233, 0.2);
+    }
+
+    .social-icon svg {
+      width: 20px; height: 20px;
+      fill: currentColor;
+    }
+
+    /* ===== Footer ===== */
+    .footer-section {
+      background: var(--bg-secondary);
+      border-top: 1px solid var(--border-color);
+      color: var(--text-primary);
+    }
+
+    [data-theme="dark"] .footer-section {
+      background: #080d1a;
     }
 
     .footer-link {
       color: var(--text-secondary);
       transition: color 0.3s ease;
+      text-decoration: none;
+      font-size: 0.9rem;
     }
 
     .footer-link:hover {
-      color: var(--text-primary);
-    }
-
-    .footer-border {
-      border-color: var(--border-color);
-    }
-
-    .mobile-menu {
-      display: none;
-    }
-
-    .mobile-menu.active {
-      display: block;
-    }
-
-    .hamburger {
-      cursor: pointer;
-      display: none;
-      flex-direction: column;
-      gap: 4px;
-    }
-
-    .hamburger span {
-      width: 25px;
-      height: 2px;
-      background: var(--text-primary);
-      transition: 0.3s;
-    }
-
-    .nav-link {
-      color: var(--text-secondary);
-      transition: color 0.3s ease;
-    }
-
-    .nav-link:hover {
       color: var(--text-accent);
     }
 
-    .nav-title {
-      color: var(--text-primary);
+    .footer-divider {
+      border-color: var(--border-color);
     }
 
-    .nav-subtitle {
-      color: var(--text-secondary);
+    /* ===== Animations ===== */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .fade-left {
+      opacity: 0;
+      transform: translateX(-40px);
+      transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .fade-left.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .fade-right {
+      opacity: 0;
+      transform: translateX(40px);
+      transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .fade-right.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .scale-in {
+      opacity: 0;
+      transform: scale(0.9);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .scale-in.visible {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .stagger-1 { transition-delay: 0.1s; }
+    .stagger-2 { transition-delay: 0.2s; }
+    .stagger-3 { transition-delay: 0.3s; }
+    .stagger-4 { transition-delay: 0.4s; }
+    .stagger-5 { transition-delay: 0.5s; }
+    .stagger-6 { transition-delay: 0.6s; }
+
+    /* ===== Responsive ===== */
     @media (max-width: 768px) {
-      .text-responsive {
-        font-size: 2rem;
-      }
+      .section-padding { padding: 80px 0; }
+      .section-title { font-size: 2rem; }
+      .stat-number { font-size: 2.25rem; }
+      .parallax-divider { height: 220px; }
+      .parallax-quote { font-size: 1.15rem; padding: 0 1rem; }
+      .hero-title { font-size: 2.75rem !important; }
+      .hero-subtitle { font-size: 1.1rem !important; }
+    }
 
-      .hamburger {
-        display: flex;
-      }
+    @media (max-width: 480px) {
+      .hero-title { font-size: 2.25rem !important; }
+    }
 
-      .desktop-nav {
-        display: none;
-      }
+    /* ===== Smooth Reveal for Parallax ===== */
+    [data-parallax] {
+      will-change: transform;
+    }
 
-      .mobile-menu {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: var(--nav-bg);
-        backdrop-filter: blur(10px);
-        border-bottom: 1px solid var(--nav-border);
-        padding: 1rem;
-      }
+    /* Back to top */
+    .back-to-top {
+      position: fixed;
+      bottom: 30px; right: 30px;
+      width: 44px; height: 44px;
+      border-radius: 12px;
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      color: var(--text-secondary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.3s ease;
+      z-index: 40;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .back-to-top:hover {
+      background: var(--glow-color);
+      border-color: var(--text-accent);
+      color: var(--text-accent);
+      transform: translateY(-3px);
+    }
+
+    /* Loading animation */
+    .page-loader {
+      position: fixed;
+      inset: 0;
+      background: var(--bg-primary);
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.5s ease, visibility 0.5s ease;
+    }
+
+    .page-loader.hidden {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .loader-spinner {
+      width: 40px; height: 40px;
+      border: 3px solid var(--border-color);
+      border-top-color: var(--text-accent);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
     }
   </style>
 </head>
 
-<body class="overflow-x-hidden">
-  <!-- Navigation -->
-  <nav class="fixed top-0 left-0 right-0 z-50 nav-bg">
-    <div class="max-w-6xl mx-auto px-6 py-4">
-      <div class="flex justify-between items-center">
-        <div class="flex items-center space-x-3">
-          <div class="text-2xl">👨‍💻</div>
-          <div>
-            <div class="text-xl font-bold nav-title">Milad Raeisi</div>
-            <div class="text-xs nav-subtitle">Blockchain & AI Developer</div>
-          </div>
-        </div> <!-- Desktop Menu -->
-        <div class="hidden md:flex space-x-8 desktop-nav items-center">
-          <a href="#hero" class="nav-link font-medium">Home</a>
-          <a href="#about" class="nav-link font-medium">About</a>
-          <a href="#work" class="nav-link font-medium">Work</a>
-          <a href="#contact" class="nav-link font-medium">Contact</a>
-          <button class="theme-toggle" onclick="toggleTheme()" title="Toggle theme">
-            <span id="theme-icon">🌙</span>
-          </button>
-        </div>
+<body>
+  <!-- Page Loader -->
+  <div class="page-loader" id="pageLoader">
+    <div class="loader-spinner"></div>
+  </div>
 
-        <!-- Mobile Menu Button -->
-        <div class="flex items-center space-x-3 md:hidden">
-          <button class="theme-toggle" onclick="toggleTheme()" title="Toggle theme">
-            <span id="theme-icon-mobile">🌙</span>
-          </button>
-          <div class="hamburger" onclick="toggleMobileMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-        </div>
-      </div> <!-- Mobile Menu -->
-      <div class="mobile-menu" id="mobileMenu">
-        <div class="flex flex-col space-y-4">
-          <a href="#hero" class="nav-link font-medium" onclick="closeMobileMenu()">Home</a>
-          <a href="#about" class="nav-link font-medium" onclick="closeMobileMenu()">About</a>
-          <a href="#work" class="nav-link font-medium" onclick="closeMobileMenu()">Work</a>
-          <a href="#contact" class="nav-link font-medium" onclick="closeMobileMenu()">Contact</a>
-        </div>
-      </div>
-    </div>
-  </nav> <!-- Hero Section -->
-  <section id="hero" class="min-h-screen flex flex-col items-center justify-center p-6 text-center pt-20">
-    <div class="text-8xl mb-8">👨‍💻</div>
-    <h1 class="text-5xl md:text-7xl font-bold mb-4 fade-in" style="color: var(--text-primary);">Milad Raeisi</h1>
-    <h2 class="text-2xl md:text-3xl mb-8 fade-in" style="color: var(--text-secondary);">
-      Blockchain Developer & AI Architect
-    </h2>
-    <div class="flex flex-wrap justify-center gap-3 mb-10 fade-in">
-      <div class="hero-badge px-4 py-2 rounded-full">
-        <span class="text-sm hero-badge-text">🧱 Blockcore</span>
-      </div>
-      <div class="hero-badge px-4 py-2 rounded-full">
-        <span class="text-sm hero-badge-text">🎯 Angor</span>
-      </div>
-      <div class="hero-badge px-4 py-2 rounded-full">
-        <span class="text-sm hero-badge-text">🚀 SBC</span>
-      </div>
-    </div>
-    <a href="#work" class="btn-primary px-8 py-3 rounded-lg font-medium fade-in">
-      View Work
-    </a>
-  </section> <!-- About Section -->
-  <section id="about" class="py-20 section-white">
-    <div class="max-w-6xl mx-auto px-6">
-      <h2 class="text-4xl font-bold text-center mb-16 fade-in">About Me</h2>
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-        <div>
-          <h3 class="text-2xl font-bold mb-6 fade-in" style="color: var(--text-primary);">Blockchain & AI Expert</h3>
-          <p class="text-lg mb-6 fade-in" style="color: var(--text-secondary);">
-            Senior developer building decentralized solutions and AI systems.
-          </p>
-          <p class="text-lg fade-in" style="color: var(--text-secondary);">
-            Core member at Blockcore and Angor. Founder of Senior Blockchain.
-          </p>
-        </div>
-        <div class="grid grid-cols-2 gap-6 fade-in">
-          <div class="card p-6 text-center">
-            <div class="text-3xl mb-3">🏢</div>
-            <h4 class="font-bold" style="color: var(--text-primary);">SBC</h4>
-            <p class="text-sm" style="color: var(--text-secondary);">Founder</p>
-          </div>
-          <div class="card p-6 text-center">
-            <div class="text-3xl mb-3">🧱</div>
-            <h4 class="font-bold" style="color: var(--text-primary);">Blockcore</h4>
-            <p class="text-sm" style="color: var(--text-secondary);">Core Member</p>
-          </div>
-          <div class="card p-6 text-center">
-            <div class="text-3xl mb-3">🎯</div>
-            <h4 class="font-bold" style="color: var(--text-primary);">Angor</h4>
-            <p class="text-sm" style="color: var(--text-secondary);">Core Member</p>
-          </div>
-          <div class="card p-6 text-center">
-            <div class="text-3xl mb-3">⚡</div>
-            <h4 class="font-bold" style="color: var(--text-primary);">Innovation</h4>
-            <p class="text-sm" style="color: var(--text-secondary);">Technology</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section> <!-- Work Section -->
-  <section id="work" class="py-20 section-gray">
-    <div class="max-w-6xl mx-auto px-6">
-      <h2 class="text-4xl font-bold text-center mb-16 fade-in">Work Experience</h2>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <!-- Senior Blockchain -->
-        <div class="card p-8 fade-in">
-          <div class="text-4xl mb-4 text-center">🚀</div>
-          <h3 class="text-xl font-bold accent-text text-center mb-2">
-            <a href="https://seniorblockchain.io" class="hover:underline" target="_blank">Senior Blockchain</a>
-          </h3>
-          <p class="text-center" style="color: var(--text-secondary);" mb-4">Founder & CEO</p>
-          <div class="space-y-2 text-sm" style="color: var(--text-secondary);">
-            <div>• Enterprise blockchain solutions</div>
-            <div>• AI-powered automation</div>
-            <div>• Smart contract development</div>
-            <div>• Technology consulting</div>
-          </div>
-        </div>
-
-        <!-- Blockcore -->
-        <div class="card p-8 fade-in">
-          <div class="text-4xl mb-4 text-center">🧱</div>
-          <h3 class="text-xl font-bold accent-text text-center mb-2">
-            <a href="https://blockcore.net/" class="hover:underline" target="_blank">Blockcore</a>
-          </h3>
-          <p class="text-center mb-4" style="color: var(--text-secondary);">Core Member</p>
-          <div class="space-y-2 text-sm" style="color: var(--text-secondary);">
-            <div>• Decentralized infrastructure</div>
-            <div>• Blockchain tools</div>
-            <div>• Developer solutions</div>
-            <div>• Community development</div>
-          </div>
-        </div>
-
-        <!-- Angor -->
-        <div class="card p-8 fade-in">
-          <div class="text-4xl mb-4 text-center">🎯</div>
-          <h3 class="text-xl font-bold accent-text text-center mb-2">
-            <a href="https://angor.io/" class="hover:underline" target="_blank">Angor</a>
-          </h3>
-          <p class="text-center mb-4" style="color: var(--text-secondary);">Core Member</p>
-          <div class="space-y-2 text-sm" style="color: var(--text-secondary);">
-            <div>• Bitcoin funding protocol</div>
-            <div>• Time-lock contracts</div>
-            <div>• Fund recovery system</div>
-            <div>• Nostr integration</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Skills Section -->
-      <div class="mt-20">
-        <h3 class="text-3xl font-bold text-center mb-12 fade-in">Skills & Technologies</h3>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div class="card p-6 text-center fade-in">
-            <div class="text-3xl mb-3">⛓️</div>
-            <h4 class="font-bold accent-text mb-2">Blockchain</h4>
-            <div class="text-sm" style="color: var(--text-secondary);">Bitcoin • Ethereum • Smart Contracts</div>
-          </div>
-          <div class="card p-6 text-center fade-in">
-            <div class="text-3xl mb-3">🧠</div>
-            <h4 class="font-bold accent-text mb-2">AI & ML</h4>
-            <div class="text-sm" style="color: var(--text-secondary);">Python • TensorFlow • NLP</div>
-          </div>
-          <div class="card p-6 text-center fade-in">
-            <div class="text-3xl mb-3">💻</div>
-            <h4 class="font-bold accent-text mb-2">Development</h4>
-            <div class="text-sm" style="color: var(--text-secondary);">C# • TypeScript • React</div>
-          </div>
-          <div class="card p-6 text-center fade-in">
-            <div class="text-3xl mb-3">☁️</div>
-            <h4 class="font-bold accent-text mb-2">Cloud</h4>
-            <div class="text-sm" style="color: var(--text-secondary);">AWS • Azure • Docker</div>
-          </div>
-          <div class="card p-6 text-center fade-in">
-            <div class="text-3xl mb-3">🔒</div>
-            <h4 class="font-bold accent-text mb-2">Security</h4>
-            <div class="text-sm" style="color: var(--text-secondary);">Audits • Penetration Testing</div>
-          </div>
-          <div class="card p-6 text-center fade-in">
-            <div class="text-3xl mb-3">👑</div>
-            <h4 class="font-bold accent-text mb-2">Leadership</h4>
-            <div class="text-sm" style="color: var(--text-secondary);">Team Lead • Strategy • Consulting</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section><!-- Contact Section -->
-  <section id="contact" class="py-20 section-white">
-    <div class="max-w-4xl mx-auto px-6 text-center">
-      <div class="text-6xl mb-8">📧</div>
-      <h2 class="text-4xl font-bold mb-6 fade-in" style="color: var(--text-primary);">Let's Build Together</h2>
-      <p class="text-xl max-w-2xl mx-auto mb-12 fade-in" style="color: var(--text-secondary);">
-        Ready to transform your ideas into blockchain and AI solutions?
-      </p>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-        <div class="card p-6 fade-in">
-          <div class="text-3xl mb-4">💼</div>
-          <h3 class="font-bold accent-text mb-2">Business</h3>
-          <p class="text-sm" style="color: var(--text-secondary);">Enterprise solutions</p>
-        </div>
-        <div class="card p-6 fade-in">
-          <div class="text-3xl mb-4">🤝</div>
-          <h3 class="font-bold accent-text mb-2">Partnerships</h3>
-          <p class="text-sm" style="color: var(--text-secondary);">Strategic collaborations</p>
-        </div>
-        <div class="card p-6 fade-in">
-          <div class="text-3xl mb-4">🎓</div>
-          <h3 class="font-bold accent-text mb-2">Speaking</h3>
-          <p class="text-sm" style="color: var(--text-secondary);">Technical workshops</p>
-        </div>
-      </div>
-      <div class="mb-8 fade-in">
-        <a href="mailto:info@miladraeisi.com" class="btn-primary px-8 py-4 rounded-lg font-bold text-lg">
-          📧 info@miladraeisi.com
-        </a>
-      </div>
-      <div class="flex justify-center space-x-8 fade-in">
-        <a href="https://linkedin.com/in/miladsoft" target="_blank" class="social-link group">
-          <div class="text-4xl hover:scale-110 transition-transform">💼</div>
-          <div class="text-sm mt-2 social-link-text">LinkedIn</div>
-        </a>
-        <a href="https://github.com/miladsoft" target="_blank" class="social-link group">
-          <div class="text-4xl hover:scale-110 transition-transform">💻</div>
-          <div class="text-sm mt-2 social-link-text">GitHub</div>
-        </a>
-        <a href="https://twitter.com/miladsoft" target="_blank" class="social-link group">
-          <div class="text-4xl hover:scale-110 transition-transform">🐦</div>
-          <div class="text-sm mt-2 social-link-text">Twitter</div>
-        </a>
-        <a href="https://primal.net/p/npub1tapj48eekk8lzvhupfxg4ugdgthaj97cqahk3wml97g76l20dfqspmpjyp" target="_blank"
-          class="social-link group">
-          <div class="text-4xl hover:scale-110 transition-transform">🟣</div>
-          <div class="text-sm mt-2 social-link-text">Nostr</div>
-        </a>
-      </div>
-    </div>
-  </section> 
-  
-  <!-- Footer -->
-  <footer class="footer-bg py-16">
-    <div class="max-w-6xl mx-auto px-6">
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-        <!-- Brand -->
-        <div class="col-span-1 md:col-span-2">
-          <div class="flex items-center space-x-3 mb-4">
-            <div class="text-2xl">👨‍💻</div>
+  <!-- ============================== -->
+  <!--         NAVIGATION             -->
+  <!-- ============================== -->
+  <header>
+    <nav class="fixed top-0 left-0 right-0 z-50 nav-glass" id="mainNav" role="navigation" aria-label="Main navigation">
+      <div class="max-w-6xl mx-auto px-6 py-4">
+        <div class="flex justify-between items-center">
+          <!-- Logo -->
+          <a href="#hero" class="flex items-center space-x-3 group" aria-label="Milad Raeisi - Home">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-sky-500 to-indigo-500 flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-sky-500/20">
+              M
+            </div>
             <div>
-              <div class="text-xl font-bold" style="color: var(--text-primary);">Milad Raeisi</div>
-              <div class="text-sm footer-text">Blockchain & AI Developer</div>
+              <div class="text-lg font-extrabold nav-logo-text leading-tight">Milad Raeisi</div>
+              <div class="text-xs font-medium" style="color: var(--text-secondary); letter-spacing: 0.05em;">Blockchain & AI</div>
+            </div>
+          </a>
+
+          <!-- Desktop Menu -->
+          <div class="hidden md:flex items-center space-x-8 desktop-nav">
+            <a href="#hero" class="nav-link">Home</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#work" class="nav-link">Experience</a>
+            <a href="#skills" class="nav-link">Skills</a>
+            <a href="#contact" class="nav-link">Contact</a>
+            <button class="theme-toggle" onclick="toggleTheme()" title="Toggle theme" aria-label="Toggle dark/light theme">
+              <span id="theme-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+              </span>
+            </button>
+          </div>
+
+          <!-- Mobile Controls -->
+          <div class="flex items-center space-x-3 md:hidden">
+            <button class="theme-toggle" onclick="toggleTheme()" title="Toggle theme" aria-label="Toggle dark/light theme">
+              <span id="theme-icon-mobile">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+              </span>
+            </button>
+            <div class="hamburger" id="hamburger" onclick="toggleMobileMenu()" aria-label="Toggle menu" role="button" tabindex="0">
+              <span></span>
+              <span></span>
+              <span></span>
             </div>
           </div>
-          <p class="footer-text mb-6 max-w-md">
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu" role="menu">
+          <div class="flex flex-col space-y-4 pt-2">
+            <a href="#hero" class="nav-link text-lg" onclick="closeMobileMenu()" role="menuitem">Home</a>
+            <a href="#about" class="nav-link text-lg" onclick="closeMobileMenu()" role="menuitem">About</a>
+            <a href="#work" class="nav-link text-lg" onclick="closeMobileMenu()" role="menuitem">Experience</a>
+            <a href="#skills" class="nav-link text-lg" onclick="closeMobileMenu()" role="menuitem">Skills</a>
+            <a href="#contact" class="nav-link text-lg" onclick="closeMobileMenu()" role="menuitem">Contact</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ============================== -->
+    <!--         HERO SECTION           -->
+    <!-- ============================== -->
+    <section id="hero" class="hero-section" aria-label="Introduction">
+      <!-- Parallax Background -->
+      <div class="hero-orb hero-orb-1" data-parallax data-speed="0.02"></div>
+      <div class="hero-orb hero-orb-2" data-parallax data-speed="0.03"></div>
+      <div class="hero-orb hero-orb-3" data-parallax data-speed="0.015"></div>
+      <div class="hero-grid"></div>
+
+      <!-- Floating Particles -->
+      <div class="particles-container" id="particles" aria-hidden="true"></div>
+
+      <!-- Floating Geometric Shapes -->
+      <div class="parallax-shapes" aria-hidden="true">
+        <div class="parallax-shape shape-circle" data-parallax data-speed="0.04" style="width:80px;height:80px;top:15%;left:8%;"></div>
+        <div class="parallax-shape shape-square" data-parallax data-speed="0.025" style="width:50px;height:50px;top:70%;left:15%;transform:rotate(30deg);"></div>
+        <div class="parallax-shape shape-circle" data-parallax data-speed="0.035" style="width:40px;height:40px;top:25%;right:12%;"></div>
+        <div class="parallax-shape shape-square" data-parallax data-speed="0.05" style="width:60px;height:60px;top:65%;right:8%;transform:rotate(45deg);"></div>
+        <div class="parallax-shape shape-circle" data-parallax data-speed="0.02" style="width:30px;height:30px;top:50%;left:40%;"></div>
+      </div>
+
+      <!-- Hero Content -->
+      <div class="relative z-10 text-center px-6 max-w-4xl mx-auto">
+        <div class="fade-up">
+          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium mb-8 hero-badge">
+            <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+            <span style="color: var(--text-secondary);">Available for collaboration</span>
+          </div>
+        </div>
+
+        <h1 class="hero-title text-5xl md:text-7xl font-black mb-6 fade-up stagger-1" style="letter-spacing: -0.04em; line-height: 1.1;">
+          <span style="color: var(--text-primary);">Hi, I'm </span>
+          <span class="gradient-text">Milad Raeisi</span>
+        </h1>
+
+        <p class="hero-subtitle text-xl md:text-2xl mb-4 fade-up stagger-2" style="color: var(--text-secondary); font-weight: 400; letter-spacing: -0.01em;">
+          Senior <span class="font-semibold" style="color: var(--text-primary);">Blockchain Developer</span> &
+          <span class="font-semibold" style="color: var(--text-primary);">AI Architect</span>
+        </p>
+
+        <p class="text-base md:text-lg mb-10 fade-up stagger-3 max-w-xl mx-auto" style="color: var(--text-secondary);">
+          Building the future of decentralized finance and intelligent systems.
+          <span id="typewriter" class="font-mono font-medium" style="color: var(--text-accent);"></span>
+          <span class="typewriter-cursor"></span>
+        </p>
+
+        <!-- Badges -->
+        <div class="flex flex-wrap justify-center gap-3 mb-12 fade-up stagger-4">
+          <a href="https://blockcore.net/" target="_blank" rel="noopener noreferrer" class="hero-badge px-5 py-2.5 rounded-xl text-sm font-medium inline-flex items-center gap-2">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+            Blockcore
+          </a>
+          <a href="https://angor.io/" target="_blank" rel="noopener noreferrer" class="hero-badge px-5 py-2.5 rounded-xl text-sm font-medium inline-flex items-center gap-2">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg>
+            Angor
+          </a>
+          <a href="https://seniorblockchain.io" target="_blank" rel="noopener noreferrer" class="hero-badge px-5 py-2.5 rounded-xl text-sm font-medium inline-flex items-center gap-2">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            Senior Blockchain
+          </a>
+        </div>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-wrap justify-center gap-4 fade-up stagger-5">
+          <a href="#work" class="btn-primary">
+            <span>View My Work</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="position:relative;z-index:1;"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <a href="#contact" class="btn-outline">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            Get in Touch
+          </a>
+        </div>
+      </div>
+
+      <!-- Scroll Indicator -->
+      <div class="scroll-indicator fade-up stagger-6" aria-hidden="true">
+        <div class="scroll-indicator-line">
+          <div class="scroll-indicator-dot"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== -->
+    <!--        STATS SECTION           -->
+    <!-- ============================== -->
+    <section class="stats-section section-bg-secondary" aria-label="Statistics">
+      <div class="max-w-6xl mx-auto px-6 py-16">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div class="stat-item fade-up stagger-1">
+            <div class="stat-number gradient-text" data-count="10">0+</div>
+            <div class="stat-label">Years Experience</div>
+          </div>
+          <div class="stat-item fade-up stagger-2">
+            <div class="stat-number gradient-text" data-count="3">0</div>
+            <div class="stat-label">Organizations</div>
+          </div>
+          <div class="stat-item fade-up stagger-3">
+            <div class="stat-number gradient-text" data-count="50">0+</div>
+            <div class="stat-label">Projects Delivered</div>
+          </div>
+          <div class="stat-item fade-up stagger-4">
+            <div class="stat-number gradient-text" data-count="100">0+</div>
+            <div class="stat-label">Open Source Contributions</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== -->
+    <!--        ABOUT SECTION           -->
+    <!-- ============================== -->
+    <section id="about" class="section-padding section-bg-primary" aria-label="About">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="fade-up">
+          <div class="accent-line"></div>
+          <h2 class="section-title">About Me</h2>
+          <p class="section-subtitle">
+            Passionate about building decentralized infrastructure and AI-powered solutions that push the boundaries of innovation.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div class="fade-left">
+            <h3 class="text-2xl font-bold mb-6" style="color: var(--text-primary); letter-spacing: -0.02em;">
+              Blockchain & AI Expert
+            </h3>
+            <p class="text-lg mb-6 leading-relaxed" style="color: var(--text-secondary);">
+              I'm a senior developer specializing in blockchain architecture and artificial intelligence. With deep expertise in Bitcoin protocols, Ethereum smart contracts, and decentralized infrastructure, I build systems that are secure, scalable, and future-ready.
+            </p>
+            <p class="text-lg mb-8 leading-relaxed" style="color: var(--text-secondary);">
+              As a core member at <strong style="color: var(--text-primary);">Blockcore</strong> and <strong style="color: var(--text-primary);">Angor</strong>, and the founder of <strong style="color: var(--text-primary);">Senior Blockchain</strong>, I lead teams in creating cutting-edge decentralized solutions.
+            </p>
+
+            <!-- Tech stack pills -->
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1.5 rounded-lg text-xs font-medium" style="background: var(--glow-color); color: var(--text-accent);">Bitcoin</span>
+              <span class="px-3 py-1.5 rounded-lg text-xs font-medium" style="background: var(--glow-color); color: var(--text-accent);">Ethereum</span>
+              <span class="px-3 py-1.5 rounded-lg text-xs font-medium" style="background: var(--glow-color); color: var(--text-accent);">C# / .NET</span>
+              <span class="px-3 py-1.5 rounded-lg text-xs font-medium" style="background: var(--glow-color); color: var(--text-accent);">TypeScript</span>
+              <span class="px-3 py-1.5 rounded-lg text-xs font-medium" style="background: var(--glow-color); color: var(--text-accent);">Python</span>
+              <span class="px-3 py-1.5 rounded-lg text-xs font-medium" style="background: var(--glow-color); color: var(--text-accent);">TensorFlow</span>
+              <span class="px-3 py-1.5 rounded-lg text-xs font-medium" style="background: var(--glow-color); color: var(--text-accent);">Docker</span>
+              <span class="px-3 py-1.5 rounded-lg text-xs font-medium" style="background: var(--glow-color); color: var(--text-accent);">Nostr</span>
+            </div>
+          </div>
+
+          <!-- About Cards -->
+          <div class="grid grid-cols-2 gap-5 fade-right">
+            <div class="card skill-card stagger-1 fade-up">
+              <div class="card-icon card-icon-blue">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              </div>
+              <h4 class="font-bold text-sm" style="color: var(--text-primary);">Senior Blockchain</h4>
+              <p class="text-xs mt-1" style="color: var(--text-secondary);">Founder & CEO</p>
+            </div>
+            <div class="card skill-card stagger-2 fade-up">
+              <div class="card-icon card-icon-indigo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+              </div>
+              <h4 class="font-bold text-sm" style="color: var(--text-primary);">Blockcore</h4>
+              <p class="text-xs mt-1" style="color: var(--text-secondary);">Core Member</p>
+            </div>
+            <div class="card skill-card stagger-3 fade-up">
+              <div class="card-icon card-icon-violet">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg>
+              </div>
+              <h4 class="font-bold text-sm" style="color: var(--text-primary);">Angor</h4>
+              <p class="text-xs mt-1" style="color: var(--text-secondary);">Core Member</p>
+            </div>
+            <div class="card skill-card stagger-4 fade-up">
+              <div class="card-icon card-icon-blue">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+              </div>
+              <h4 class="font-bold text-sm" style="color: var(--text-primary);">Innovation</h4>
+              <p class="text-xs mt-1" style="color: var(--text-secondary);">Cutting-edge Tech</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== -->
+    <!--      PARALLAX DIVIDER 1        -->
+    <!-- ============================== -->
+    <div class="parallax-divider" aria-hidden="true">
+      <div class="parallax-bg" data-parallax data-speed="0.05"></div>
+      <div class="parallax-shapes">
+        <div class="parallax-shape shape-circle" data-parallax data-speed="0.06" style="width:100px;height:100px;top:20%;left:10%;"></div>
+        <div class="parallax-shape shape-square" data-parallax data-speed="0.04" style="width:70px;height:70px;bottom:20%;right:15%;transform:rotate(20deg);"></div>
+      </div>
+      <div class="parallax-content">
+        <p class="parallax-quote fade-up">
+          &ldquo;Building trust through <span class="gradient-text">code</span>, one block at a time.&rdquo;
+        </p>
+      </div>
+    </div>
+
+    <!-- ============================== -->
+    <!--     WORK EXPERIENCE SECTION    -->
+    <!-- ============================== -->
+    <section id="work" class="section-padding section-bg-secondary" aria-label="Work Experience">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="fade-up">
+          <div class="accent-line"></div>
+          <h2 class="section-title">Work Experience</h2>
+          <p class="section-subtitle">
+            Leading blockchain innovation across multiple organizations and open-source projects.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Senior Blockchain -->
+          <article class="card work-card fade-up stagger-1 contact-card-glow">
+            <div class="work-card-tag tag-founder">Founder</div>
+            <h3>
+              <a href="https://seniorblockchain.io" target="_blank" rel="noopener noreferrer">
+                Senior Blockchain
+              </a>
+            </h3>
+            <p class="text-sm mt-1" style="color: var(--text-secondary);">Founder & CEO</p>
+            <ul class="work-card-list">
+              <li>Enterprise blockchain solutions</li>
+              <li>AI-powered automation systems</li>
+              <li>Smart contract development</li>
+              <li>Strategic technology consulting</li>
+            </ul>
+          </article>
+
+          <!-- Blockcore -->
+          <article class="card work-card fade-up stagger-2 contact-card-glow">
+            <div class="work-card-tag tag-core">Core Member</div>
+            <h3>
+              <a href="https://blockcore.net/" target="_blank" rel="noopener noreferrer">
+                Blockcore
+              </a>
+            </h3>
+            <p class="text-sm mt-1" style="color: var(--text-secondary);">Core Developer</p>
+            <ul class="work-card-list">
+              <li>Decentralized infrastructure</li>
+              <li>Blockchain development tools</li>
+              <li>Developer-first solutions</li>
+              <li>Open-source community growth</li>
+            </ul>
+          </article>
+
+          <!-- Angor -->
+          <article class="card work-card fade-up stagger-3 contact-card-glow">
+            <div class="work-card-tag tag-core">Core Member</div>
+            <h3>
+              <a href="https://angor.io/" target="_blank" rel="noopener noreferrer">
+                Angor
+              </a>
+            </h3>
+            <p class="text-sm mt-1" style="color: var(--text-secondary);">Core Developer</p>
+            <ul class="work-card-list">
+              <li>Bitcoin-based funding protocol</li>
+              <li>Time-lock smart contracts</li>
+              <li>Investor fund recovery system</li>
+              <li>Nostr protocol integration</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== -->
+    <!--      PARALLAX DIVIDER 2        -->
+    <!-- ============================== -->
+    <div class="parallax-divider" aria-hidden="true">
+      <div class="parallax-bg" data-parallax data-speed="0.04"></div>
+      <div class="parallax-shapes">
+        <div class="parallax-shape shape-square" data-parallax data-speed="0.07" style="width:60px;height:60px;top:30%;left:20%;transform:rotate(15deg);"></div>
+        <div class="parallax-shape shape-circle" data-parallax data-speed="0.03" style="width:90px;height:90px;bottom:25%;right:20%;"></div>
+        <div class="parallax-shape shape-circle" data-parallax data-speed="0.05" style="width:45px;height:45px;top:50%;left:60%;"></div>
+      </div>
+      <div class="parallax-content">
+        <p class="parallax-quote fade-up">
+          &ldquo;Decentralization is not just technology &mdash; it's <span class="gradient-text">freedom</span>.&rdquo;
+        </p>
+      </div>
+    </div>
+
+    <!-- ============================== -->
+    <!--       SKILLS SECTION           -->
+    <!-- ============================== -->
+    <section id="skills" class="section-padding section-bg-primary" aria-label="Skills and Technologies">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="fade-up">
+          <div class="accent-line"></div>
+          <h2 class="section-title">Skills & Technologies</h2>
+          <p class="section-subtitle">
+            A comprehensive toolkit spanning blockchain development, AI engineering, cloud infrastructure, and security.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Blockchain -->
+          <div class="card skill-card fade-up stagger-1">
+            <div class="card-icon card-icon-blue">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+            </div>
+            <h4 class="font-bold mb-1" style="color: var(--text-primary);">Blockchain</h4>
+            <p class="text-sm" style="color: var(--text-secondary);">Bitcoin, Ethereum, Smart Contracts</p>
+            <div class="skill-bar-track"><div class="skill-bar-fill" style="--fill-width: 95%;"></div></div>
+          </div>
+
+          <!-- AI & ML -->
+          <div class="card skill-card fade-up stagger-2">
+            <div class="card-icon card-icon-indigo">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a4 4 0 0 1 4 4c0 1.95-1.4 3.58-3.25 3.93"/><path d="M8 6a4 4 0 0 1 3.25 3.93"/><circle cx="12" cy="17" r="5"/><path d="M12 14v3"/><path d="M10.5 18.5L12 17l1.5 1.5"/></svg>
+            </div>
+            <h4 class="font-bold mb-1" style="color: var(--text-primary);">AI & Machine Learning</h4>
+            <p class="text-sm" style="color: var(--text-secondary);">Python, TensorFlow, NLP</p>
+            <div class="skill-bar-track"><div class="skill-bar-fill" style="--fill-width: 88%;"></div></div>
+          </div>
+
+          <!-- Development -->
+          <div class="card skill-card fade-up stagger-3">
+            <div class="card-icon card-icon-violet">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </div>
+            <h4 class="font-bold mb-1" style="color: var(--text-primary);">Development</h4>
+            <p class="text-sm" style="color: var(--text-secondary);">C#, TypeScript, Angular, React</p>
+            <div class="skill-bar-track"><div class="skill-bar-fill" style="--fill-width: 92%;"></div></div>
+          </div>
+
+          <!-- Cloud -->
+          <div class="card skill-card fade-up stagger-4">
+            <div class="card-icon card-icon-blue">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
+            </div>
+            <h4 class="font-bold mb-1" style="color: var(--text-primary);">Cloud & DevOps</h4>
+            <p class="text-sm" style="color: var(--text-secondary);">AWS, Azure, Docker, Kubernetes</p>
+            <div class="skill-bar-track"><div class="skill-bar-fill" style="--fill-width: 85%;"></div></div>
+          </div>
+
+          <!-- Security -->
+          <div class="card skill-card fade-up stagger-5">
+            <div class="card-icon card-icon-indigo">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h4 class="font-bold mb-1" style="color: var(--text-primary);">Security</h4>
+            <p class="text-sm" style="color: var(--text-secondary);">Smart Contract Audits, Pen Testing</p>
+            <div class="skill-bar-track"><div class="skill-bar-fill" style="--fill-width: 82%;"></div></div>
+          </div>
+
+          <!-- Leadership -->
+          <div class="card skill-card fade-up stagger-6">
+            <div class="card-icon card-icon-violet">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h4 class="font-bold mb-1" style="color: var(--text-primary);">Leadership</h4>
+            <p class="text-sm" style="color: var(--text-secondary);">Team Lead, Strategy, Consulting</p>
+            <div class="skill-bar-track"><div class="skill-bar-fill" style="--fill-width: 90%;"></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== -->
+    <!--       CONTACT SECTION          -->
+    <!-- ============================== -->
+    <section id="contact" class="section-padding section-bg-secondary" aria-label="Contact">
+      <div class="max-w-4xl mx-auto px-6 text-center">
+        <div class="fade-up">
+          <div class="accent-line"></div>
+          <h2 class="section-title">Let's Build Together</h2>
+          <p class="section-subtitle">
+            Ready to transform your ideas into production-grade blockchain and AI solutions? Let's connect and create something extraordinary.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-14">
+          <div class="card skill-card fade-up stagger-1 contact-card-glow">
+            <div class="card-icon card-icon-blue">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+            </div>
+            <h3 class="font-bold mb-1" style="color: var(--text-primary);">Business</h3>
+            <p class="text-sm" style="color: var(--text-secondary);">Enterprise blockchain solutions</p>
+          </div>
+          <div class="card skill-card fade-up stagger-2 contact-card-glow">
+            <div class="card-icon card-icon-indigo">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h3 class="font-bold mb-1" style="color: var(--text-primary);">Partnerships</h3>
+            <p class="text-sm" style="color: var(--text-secondary);">Strategic collaborations</p>
+          </div>
+          <div class="card skill-card fade-up stagger-3 contact-card-glow">
+            <div class="card-icon card-icon-violet">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            </div>
+            <h3 class="font-bold mb-1" style="color: var(--text-primary);">Speaking</h3>
+            <p class="text-sm" style="color: var(--text-secondary);">Workshops & conferences</p>
+          </div>
+        </div>
+
+        <!-- Email CTA -->
+        <div class="mb-12 fade-up stagger-4">
+          <a href="mailto:info@miladraeisi.com" class="btn-primary text-lg">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="position:relative;z-index:1;"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <span>info@miladraeisi.com</span>
+          </a>
+        </div>
+
+        <!-- Social Links -->
+        <div class="flex justify-center gap-4 fade-up stagger-5">
+          <a href="https://linkedin.com/in/miladsoft" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn" title="LinkedIn">
+            <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="https://github.com/miladsoft" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="GitHub" title="GitHub">
+            <svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+          </a>
+          <a href="https://twitter.com/miladsoft" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Twitter / X" title="Twitter / X">
+            <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="https://primal.net/p/npub1tapj48eekk8lzvhupfxg4ugdgthaj97cqahk3wml97g76l20dfqspmpjyp" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Nostr" title="Nostr">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="currentColor"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================== -->
+  <!--           FOOTER               -->
+  <!-- ============================== -->
+  <footer class="footer-section py-16" role="contentinfo">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+        <!-- Brand -->
+        <div class="col-span-1 md:col-span-2">
+          <a href="#hero" class="flex items-center space-x-3 mb-5 group">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-sky-500 to-indigo-500 flex items-center justify-center text-white font-bold text-lg">
+              M
+            </div>
+            <div>
+              <div class="text-lg font-extrabold nav-logo-text">Milad Raeisi</div>
+              <div class="text-xs" style="color: var(--text-secondary);">Blockchain & AI Developer</div>
+            </div>
+          </a>
+          <p class="text-sm leading-relaxed mb-6 max-w-md" style="color: var(--text-secondary);">
             Building the future of decentralized finance and intelligent blockchain solutions.
             Core member at Blockcore and Angor, Founder of Senior Blockchain.
           </p>
-          <div class="flex space-x-4">
-            <a href="https://linkedin.com/in/miladsoft" target="_blank" class="footer-link">
-              <span class="text-xl">💼</span>
+          <div class="flex gap-3">
+            <a href="https://linkedin.com/in/miladsoft" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn" style="width:36px;height:36px;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
             </a>
-            <a href="https://github.com/miladsoft" target="_blank" class="footer-link">
-              <span class="text-xl">💻</span>
+            <a href="https://github.com/miladsoft" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="GitHub" style="width:36px;height:36px;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
             </a>
-            <a href="https://twitter.com/miladsoft" target="_blank" class="footer-link">
-              <span class="text-xl">🐦</span>
+            <a href="https://twitter.com/miladsoft" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Twitter" style="width:36px;height:36px;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
             </a>
-            <a href="https://primal.net/p/npub1tapj48eekk8lzvhupfxg4ugdgthaj97cqahk3wml97g76l20dfqspmpjyp"
-              target="_blank" class="footer-link">
-              <span class="text-xl">🟣</span>
+            <a href="https://primal.net/p/npub1tapj48eekk8lzvhupfxg4ugdgthaj97cqahk3wml97g76l20dfqspmpjyp" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Nostr" style="width:36px;height:36px;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4"/></svg>
             </a>
           </div>
         </div>
 
         <!-- Quick Links -->
-        <div>
-          <h4 class="font-bold mb-4" style="color: var(--text-primary);">Quick Links</h4>
-          <div class="space-y-2">
+        <nav aria-label="Footer navigation">
+          <h4 class="font-bold mb-4 text-sm tracking-wider uppercase" style="color: var(--text-primary);">Navigation</h4>
+          <div class="space-y-3">
             <a href="#hero" class="block footer-link">Home</a>
             <a href="#about" class="block footer-link">About</a>
-            <a href="#work" class="block footer-link">Work</a>
+            <a href="#work" class="block footer-link">Experience</a>
+            <a href="#skills" class="block footer-link">Skills</a>
             <a href="#contact" class="block footer-link">Contact</a>
           </div>
-        </div>
+        </nav>
 
         <!-- Projects -->
         <div>
-          <h4 class="font-bold mb-4" style="color: var(--text-primary);">Projects</h4>
-          <div class="space-y-2">
-            <a href="https://seniorblockchain.io" target="_blank" class="block footer-link">Senior Blockchain</a>
-            <a href="https://blockcore.net/" target="_blank" class="block footer-link">Blockcore</a>
-            <a href="https://angor.io/" target="_blank" class="block footer-link">Angor</a>
+          <h4 class="font-bold mb-4 text-sm tracking-wider uppercase" style="color: var(--text-primary);">Projects</h4>
+          <div class="space-y-3">
+            <a href="https://seniorblockchain.io" target="_blank" rel="noopener noreferrer" class="block footer-link">Senior Blockchain</a>
+            <a href="https://blockcore.net/" target="_blank" rel="noopener noreferrer" class="block footer-link">Blockcore</a>
+            <a href="https://angor.io/" target="_blank" rel="noopener noreferrer" class="block footer-link">Angor</a>
           </div>
         </div>
       </div>
 
       <!-- Bottom Bar -->
-      <div class="border-t footer-border mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-        <div class="footer-text text-sm mb-4 md:mb-0">
-          © 2024 Milad Raeisi. All rights reserved.
-        </div>
-        <div class="flex space-x-6 text-sm">
-          <a href="mailto:info@miladraeisi.com" class="footer-link">
-            📧 info@miladraeisi.com
-          </a>
-        </div>
+      <div class="border-t footer-divider mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-sm" style="color: var(--text-secondary);">
+          &copy; 2026 Milad Raeisi. All rights reserved.
+        </p>
+        <a href="mailto:info@miladraeisi.com" class="footer-link inline-flex items-center gap-2">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          info@miladraeisi.com
+        </a>
       </div>
     </div>
   </footer>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="backToTop" aria-label="Scroll to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+  </button>
+
+  <!-- ============================== -->
+  <!--          SCRIPTS               -->
+  <!-- ============================== -->
   <script>
-    // Theme toggle functionality
+    // ===== Theme Toggle =====
     function toggleTheme() {
       const html = document.documentElement;
       const currentTheme = html.getAttribute('data-theme');
       const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-
       html.setAttribute('data-theme', newTheme);
       localStorage.setItem('theme', newTheme);
-
-      // Update theme icons
-      const themeIcon = document.getElementById('theme-icon');
-      const themeIconMobile = document.getElementById('theme-icon-mobile');
-      const icon = newTheme === 'dark' ? '☀️' : '🌙';
-
-      if (themeIcon) themeIcon.textContent = icon;
-      if (themeIconMobile) themeIconMobile.textContent = icon;
+      updateThemeIcons(newTheme);
     }
 
-    // Initialize theme on page load
+    function updateThemeIcons(theme) {
+      const moonSVG = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>';
+      const sunSVG = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>';
+      const icon = theme === 'dark' ? sunSVG : moonSVG;
+      const themeIcon = document.getElementById('theme-icon');
+      const themeIconMobile = document.getElementById('theme-icon-mobile');
+      if (themeIcon) themeIcon.innerHTML = icon;
+      if (themeIconMobile) themeIconMobile.innerHTML = icon;
+    }
+
     function initTheme() {
-      const savedTheme = localStorage.getItem('theme') || 'light';
-      const html = document.documentElement;
-      html.setAttribute('data-theme', savedTheme);
-
-      // Update theme icons
-      const themeIcon = document.getElementById('theme-icon');
-      const themeIconMobile = document.getElementById('theme-icon-mobile');
-      const icon = savedTheme === 'dark' ? '☀️' : '🌙';
-
-      if (themeIcon) themeIcon.textContent = icon;
-      if (themeIconMobile) themeIconMobile.textContent = icon;
+      const savedTheme = localStorage.getItem('theme') ||
+        (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', savedTheme);
+      updateThemeIcons(savedTheme);
     }
 
-    // Mobile menu functions
+    // ===== Mobile Menu =====
     function toggleMobileMenu() {
       const menu = document.getElementById('mobileMenu');
+      const hamburger = document.getElementById('hamburger');
       menu.classList.toggle('active');
+      hamburger.classList.toggle('open');
     }
 
     function closeMobileMenu() {
       const menu = document.getElementById('mobileMenu');
+      const hamburger = document.getElementById('hamburger');
       menu.classList.remove('active');
+      hamburger.classList.remove('open');
     }
 
+    // ===== Page Load =====
     document.addEventListener('DOMContentLoaded', () => {
-     
-      // Initialize theme
       initTheme();
-     
-      // Fade in elements as they enter viewport
+
+      // Hide loader
+      const loader = document.getElementById('pageLoader');
+      setTimeout(() => loader.classList.add('hidden'), 400);
+
+      // ===== Intersection Observer for Animations =====
+      const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -40px 0px' };
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             entry.target.classList.add('visible');
+
+            // Animate skill bars
+            const bars = entry.target.querySelectorAll('.skill-bar-fill');
+            bars.forEach(bar => bar.classList.add('animated'));
+
+            // Animate counters
+            if (entry.target.classList.contains('stat-item')) {
+              const numEl = entry.target.querySelector('.stat-number');
+              if (numEl && !numEl.dataset.animated) {
+                numEl.dataset.animated = 'true';
+                animateCounter(numEl);
+              }
+            }
           }
         });
-      }, { threshold: 0.1 });
+      }, observerOptions);
 
-      document.querySelectorAll('.fade-in').forEach(el => {
+      document.querySelectorAll('.fade-up, .fade-left, .fade-right, .scale-in, .stat-item').forEach(el => {
         observer.observe(el);
       });
 
-      // Smooth scrolling for navigation links
+      // Also observe skill cards for their bars
+      document.querySelectorAll('.skill-card').forEach(el => observer.observe(el));
+
+      // ===== Smooth Scrolling =====
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
+        anchor.addEventListener('click', function(e) {
           e.preventDefault();
           const target = document.querySelector(this.getAttribute('href'));
           if (target) {
-            target.scrollIntoView({
-              behavior: 'smooth',
-              block: 'start'
+            const navHeight = document.querySelector('nav').offsetHeight;
+            const targetPos = target.getBoundingClientRect().top + window.pageYOffset - navHeight;
+            window.scrollTo({ top: targetPos, behavior: 'smooth' });
+          }
+          closeMobileMenu();
+        });
+      });
+
+      // ===== Active Nav Link on Scroll =====
+      const sections = document.querySelectorAll('section[id]');
+      const navLinks = document.querySelectorAll('.nav-link');
+
+      function updateActiveNav() {
+        const scrollPos = window.scrollY + 120;
+        sections.forEach(section => {
+          const top = section.offsetTop;
+          const height = section.offsetHeight;
+          const id = section.getAttribute('id');
+          if (scrollPos >= top && scrollPos < top + height) {
+            navLinks.forEach(link => {
+              link.classList.remove('active');
+              if (link.getAttribute('href') === '#' + id) {
+                link.classList.add('active');
+              }
             });
           }
         });
-      });        
-      
-      // Add scroll effect to navigation
-      const nav = document.querySelector('nav');
-      window.addEventListener('scroll', () => {
-        const html = document.documentElement;
-        const currentTheme = html.getAttribute('data-theme');
+      }
 
-        if (window.scrollY > 100) {
-          if (currentTheme === 'dark') {
-            nav.style.background = 'rgba(15, 23, 42, 0.98)';
-          } else {
-            nav.style.background = 'rgba(248, 250, 252, 0.98)';
-          }
+      // ===== Parallax Effect on Scroll =====
+      const parallaxElements = document.querySelectorAll('[data-parallax]');
+
+      function updateParallax() {
+        const scrollY = window.scrollY;
+        parallaxElements.forEach(el => {
+          const speed = parseFloat(el.dataset.speed) || 0.03;
+          const rect = el.getBoundingClientRect();
+          const centerOffset = rect.top + rect.height / 2 - window.innerHeight / 2;
+          const translateY = centerOffset * speed * -1;
+          el.style.transform = `translateY(${translateY}px)`;
+        });
+      }
+
+      // ===== Nav Scroll Effects =====
+      const nav = document.getElementById('mainNav');
+      const backToTop = document.getElementById('backToTop');
+
+      function onScroll() {
+        // Nav shadow
+        if (window.scrollY > 50) {
+          nav.classList.add('scrolled');
         } else {
-          nav.style.background = 'var(--nav-bg)';
+          nav.classList.remove('scrolled');
         }
-      });
+
+        // Back to top
+        if (window.scrollY > 500) {
+          backToTop.classList.add('visible');
+        } else {
+          backToTop.classList.remove('visible');
+        }
+
+        updateActiveNav();
+        updateParallax();
+      }
+
+      // Use requestAnimationFrame for smooth parallax
+      let ticking = false;
+      window.addEventListener('scroll', () => {
+        if (!ticking) {
+          requestAnimationFrame(() => {
+            onScroll();
+            ticking = false;
+          });
+          ticking = true;
+        }
+      }, { passive: true });
+
+      // ===== Create Particles =====
+      const particlesContainer = document.getElementById('particles');
+      if (particlesContainer) {
+        for (let i = 0; i < 30; i++) {
+          const particle = document.createElement('div');
+          particle.className = 'particle';
+          particle.style.left = Math.random() * 100 + '%';
+          particle.style.animationDuration = (8 + Math.random() * 12) + 's';
+          particle.style.animationDelay = Math.random() * 10 + 's';
+          particle.style.width = (2 + Math.random() * 3) + 'px';
+          particle.style.height = particle.style.width;
+          particlesContainer.appendChild(particle);
+        }
+      }
+
+      // ===== Typewriter Effect =====
+      const typewriterEl = document.getElementById('typewriter');
+      if (typewriterEl) {
+        const phrases = [
+          'Blockcore Developer',
+          'Angor Core Member',
+          'SBC Founder',
+          'Smart Contract Engineer',
+          'AI/ML Specialist',
+          'Open Source Contributor'
+        ];
+        let phraseIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        let typeSpeed = 80;
+
+        function typeWriter() {
+          const currentPhrase = phrases[phraseIndex];
+
+          if (isDeleting) {
+            typewriterEl.textContent = currentPhrase.substring(0, charIndex - 1);
+            charIndex--;
+            typeSpeed = 40;
+          } else {
+            typewriterEl.textContent = currentPhrase.substring(0, charIndex + 1);
+            charIndex++;
+            typeSpeed = 80;
+          }
+
+          if (!isDeleting && charIndex === currentPhrase.length) {
+            typeSpeed = 2000;
+            isDeleting = true;
+          } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            phraseIndex = (phraseIndex + 1) % phrases.length;
+            typeSpeed = 400;
+          }
+
+          setTimeout(typeWriter, typeSpeed);
+        }
+
+        setTimeout(typeWriter, 1200);
+      }
     });
+
+    // ===== Counter Animation =====
+    function animateCounter(el) {
+      const target = parseInt(el.dataset.count);
+      if (isNaN(target)) return;
+      const suffix = el.textContent.includes('+') ? '+' : '';
+      const duration = 2000;
+      const steps = 60;
+      const stepTime = duration / steps;
+      let current = 0;
+      const increment = target / steps;
+
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+          current = target;
+          clearInterval(timer);
+        }
+        el.textContent = Math.floor(current) + suffix;
+      }, stepTime);
+    }
   </script>
 </body>
 
